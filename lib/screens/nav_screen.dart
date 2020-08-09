@@ -38,17 +38,18 @@ class _NavScreenState extends State<NavScreen> {
       length: _icons.length,
       child: Scaffold(
         appBar: Responsive.isDesktop(context)
-            ? PreferredSize(
-                preferredSize: Size(screenSize.width, 100.0),
-                child: CustomAppBar(
-                  currentUser: currentUser,
-                  icons: _icons,
-                  selectedIndex: _selectedIndex,
-                  onTap: (index) => setState(
-                    () => _selectedIndex = index,
-                  ),
-                ),
-              )
+            ? null
+            // ? PreferredSize(
+            //     preferredSize: Size(screenSize.width, 100.0),
+            //     child: CustomAppBar(
+            //       currentUser: currentUser,
+            //       icons: _icons,
+            //       selectedIndex: _selectedIndex,
+            //       onTap: (index) => setState(
+            //         () => _selectedIndex = index,
+            //       ),
+            //     ),
+            //   )
             : null,
         body: IndexedStack(
           index: _selectedIndex,

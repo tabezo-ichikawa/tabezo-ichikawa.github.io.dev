@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_responsive_ui/widgets/widgets.dart';
 import 'package:flutter_facebook_responsive_ui/widgets/circle_button.dart';
@@ -28,7 +30,8 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         body: Responsive(
           mobile:
-              _HomeScreenMobile(scrollController: _trackingScrollController),
+              //_HomeScreenMobile(scrollController: _trackingScrollController),
+              _HomeScreenDesktop(scrollController: _trackingScrollController),
           desktop:
               _HomeScreenDesktop(scrollController: _trackingScrollController),
         ),
@@ -115,68 +118,91 @@ class _HomeScreenDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Flexible(
-          flex: 2,
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Container(
-                color: Colors.orange,
+    final Size screenSize = MediaQuery.of(context).size;
+    final double logoSize = screenSize.width / 5;
+
+    // FIXME: いったんビデオのテストをするためにreturn
+    return Container(
+      child: BackGroundVideo(),
+    );
+
+    return Container(
+      height: double.infinity,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              LogoLink(
+                logoSize: logoSize,
+                icon: MdiIcons.spotify,
+                url:
+                    'https://open.spotify.com/artist/0kA6hiWjtnojSctZTgFAs2?si=VCVJs41hRpqpRNwYqV_mow',
+                logoColor: Colors.black87,
               ),
-            ),
-          ),
-        ),
-        Container(
-          width: 600.0,
-          child: CustomScrollView(
-            controller: scrollController,
-            slivers: [
-              SliverPadding(
-                padding: const EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 10.0),
-                sliver: SliverToBoxAdapter(
-                  child: Stories(
-                    currentUser: currentUser,
-                    stories: stories,
-                  ),
-                ),
-              ),
-              SliverToBoxAdapter(
-                child: CreatePostContainer(currentUser: currentUser),
-              ),
-              SliverPadding(
-                padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 5.0),
-                sliver: SliverToBoxAdapter(
-                  child: Rooms(onlineUsers: onlineUsers),
-                ),
-              ),
-              SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (context, index) {
-                    final Post post = posts[index];
-                    return PostContainer(post: post);
-                  },
-                  childCount: posts.length,
-                ),
+              LogoLink(
+                logoSize: logoSize,
+                icon: MdiIcons.spotify,
+                url:
+                    'https://open.spotify.com/artist/0kA6hiWjtnojSctZTgFAs2?si=VCVJs41hRpqpRNwYqV_mow',
+                logoColor: Colors.black87,
               ),
             ],
           ),
-        ),
-        Flexible(
-          flex: 2,
-          child: Align(
-            alignment: Alignment.centerRight,
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Container(
-                color: Colors.red,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              LogoLink(
+                logoSize: logoSize,
+                icon: MdiIcons.spotify,
+                url:
+                    'https://open.spotify.com/artist/0kA6hiWjtnojSctZTgFAs2?si=VCVJs41hRpqpRNwYqV_mow',
+                logoColor: Colors.black87,
               ),
-            ),
+              LogoLink(
+                logoSize: logoSize,
+                icon: MdiIcons.spotify,
+                url:
+                    'https://open.spotify.com/artist/0kA6hiWjtnojSctZTgFAs2?si=VCVJs41hRpqpRNwYqV_mow',
+                logoColor: Colors.black87,
+              ),
+            ],
           ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              LogoLink(
+                logoSize: logoSize,
+                icon: MdiIcons.spotify,
+                url:
+                    'https://open.spotify.com/artist/0kA6hiWjtnojSctZTgFAs2?si=VCVJs41hRpqpRNwYqV_mow',
+                logoColor: Colors.black87,
+              ),
+              LogoLink(
+                logoSize: logoSize,
+                icon: MdiIcons.spotify,
+                url:
+                    'https://open.spotify.com/artist/0kA6hiWjtnojSctZTgFAs2?si=VCVJs41hRpqpRNwYqV_mow',
+                logoColor: Colors.black87,
+              ),
+            ],
+          ),
+        ],
+      ),
+      // DEBUG
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.red,
+          width: 8.0,
         ),
-      ],
+        // image: DecorationImage(
+        //   image: NetworkImage(
+        //       'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+        //   fit: BoxFit.cover,
+        // ),
+      ),
+      // ~DEBUG
     );
   }
 }
