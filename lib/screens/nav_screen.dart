@@ -12,12 +12,9 @@ class NavScreen extends StatefulWidget {
 }
 
 class _NavScreenState extends State<NavScreen> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final List<Widget> _screens = [
     HomeScreen(),
-    Scaffold(),
-    Scaffold(),
-    Scaffold(),
-    Scaffold(),
   ];
 
   final List<IconData> _icons = const [
@@ -32,39 +29,72 @@ class _NavScreenState extends State<NavScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
+    final screenSize = MediaQuery.of(context).size;
+    final sideAreaWidth = screenSize.width / 6;
 
     return DefaultTabController(
+      //FIXME: lengthはページの数で、drawerのメニューの数に対応させなければならない
       length: _icons.length,
       child: Scaffold(
-        appBar: Responsive.isDesktop(context)
-            ? null
-            // ? PreferredSize(
-            //     preferredSize: Size(screenSize.width, 100.0),
-            //     child: CustomAppBar(
-            //       currentUser: currentUser,
-            //       icons: _icons,
-            //       selectedIndex: _selectedIndex,
-            //       onTap: (index) => setState(
-            //         () => _selectedIndex = index,
-            //       ),
-            //     ),
-            //   )
-            : null,
+        key: _scaffoldKey,
+        drawer: _getDrawer(context),
+        appBar: PreferredSize(
+          preferredSize: Size(screenSize.width, 140),
+          child: Container(
+            child: Stack(
+              alignment: AlignmentDirectional.centerStart,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: sideAreaWidth / 3),
+                  child: InkWell(
+                    child: Icon(
+                      MdiIcons.menu,
+                      color: Colors.white,
+                      size: 80,
+                    ),
+                    onTap: () => _scaffoldKey.currentState.openDrawer(),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: sideAreaWidth),
+                  child: TitleParagraph(),
+                ),
+              ],
+            ),
+            color: Colors.black,
+          ),
+        ),
         body: IndexedStack(
+          //TODO: 複数ページ扱うとき_selectedIndexをちゃんと管理しないといけない
           index: _selectedIndex,
           children: _screens,
         ),
-        bottomNavigationBar: !Responsive.isDesktop(context)
-            ? CustomTabBar(
-                icons: _icons,
-                selectedIndex: _selectedIndex,
-                onTap: (index) => setState(
-                  () => _selectedIndex = index,
-                ),
-              )
-            : SizedBox.shrink(),
       ),
     );
   }
+}
+
+Drawer _getDrawer(BuildContext context) {
+  return Drawer(
+    child: ListView(
+      children: <Widget>[
+        const DrawerHeader(
+          child: Text(
+            'My App',
+            style: TextStyle(
+              fontSize: 24,
+              color: Colors.white,
+            ),
+          ),
+          decoration: BoxDecoration(
+            color: Colors.black,
+          ),
+        ),
+        ListTile(
+          title: const Text('Los Angeles'),
+          onTap: () => Navigator.pop(context),
+        ),
+      ],
+    ),
+  );
 }

@@ -82,18 +82,18 @@ class _HomeScreenDesktop extends StatelessWidget {
           child: CustomScrollView(
             primary: false,
             slivers: <Widget>[
-              SliverPadding(
-                padding: const EdgeInsets.all(0),
-                sliver: SliverToBoxAdapter(
-                  child: Container(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: sideAreaWidth),
-                      child: TitleParagraph(),
-                    ),
-                    color: Colors.black,
-                  ),
-                ),
-              ),
+              // SliverPadding(
+              //   padding: const EdgeInsets.all(0),
+              //   sliver: SliverToBoxAdapter(
+              //     child: Container(
+              //       child: Padding(
+              //         padding: EdgeInsets.symmetric(horizontal: sideAreaWidth),
+              //         child: TitleParagraph(),
+              //       ),
+              //       color: Colors.black,
+              //     ),
+              //   ),
+              // ),
               SliverPadding(
                 padding: EdgeInsets.symmetric(horizontal: sideAreaWidth),
                 sliver: LogoLinkSliverGrid(),
