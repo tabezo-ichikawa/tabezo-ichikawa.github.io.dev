@@ -30,9 +30,17 @@ class _BackGroundVideoState extends State<BackGroundVideo> {
   @override
   Widget build(BuildContext context) {
     return _controller.value.initialized
-        ? AspectRatio(
-            aspectRatio: _controller.value.aspectRatio,
-            child: VideoPlayer(_controller),
+        ? SizedBox.expand(
+            child: FittedBox(
+              fit: BoxFit.cover,
+              child: SizedBox(
+                // ?. call in a null-safety way. sizeが !nullのときだけ呼び出し
+                // ?? 左辺がnullのときは右辺を代入
+                width: _controller.value.size?.width ?? 0,
+                height: _controller.value.size?.height ?? 0,
+                child: VideoPlayer(_controller),
+              ),
+            ),
           )
         : Container();
   }

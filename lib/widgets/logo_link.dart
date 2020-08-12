@@ -19,11 +19,15 @@ class LogoLink extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: IconButton(
-        icon: Icon(MdiIcons.spotify),
-        iconSize: logoSize,
-        color: logoColor,
-        onPressed: () async {
+      child: InkWell(
+        child: FittedBox(
+          fit: BoxFit.fill,
+          child: Icon(
+            icon,
+            size: logoSize,
+          ),
+        ),
+        onTap: () async {
           if (await canLaunch(url)) {
             await launch(url);
           } else {

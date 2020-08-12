@@ -31,10 +31,13 @@ dependencies:
   material_design_icons_flutter: ^4.0.5345
   url_launcher: ^5.5.0
   video_player: '>=0.10.11+2 <2.0.0'
+  auto_size_text:
+  google_fonts: 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  pedantic_mono: any
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -46,9 +49,11 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+  - assets/images/
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
@@ -69,6 +74,12 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
+  fonts:
+    - family: DejavuMono
+      fonts: 
+        - asset: fonts\dejavu\DejaVuSansMono.ttf
+        - asset: fonts\dejavu\DejaVuSansMono-Bold.ttf
+          weight: 700
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
