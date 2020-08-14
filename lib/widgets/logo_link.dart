@@ -35,14 +35,15 @@ class LogoLink extends StatelessWidget {
           }
         },
       ),
-      // DEBUG
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.red,
-          width: 8.0,
-        ),
-      ),
-      // ~DEBUG
+      color: Colors.black12,
+      // // DEBUG
+      // decoration: BoxDecoration(
+      //   border: Border.all(
+      //     color: Colors.red,
+      //     width: 8.0,
+      //   ),
+      // ),
+      // // ~DEBUG
     );
   }
 }
