@@ -41,23 +41,30 @@ class _NavScreenState extends State<NavScreen> {
         appBar: PreferredSize(
           preferredSize: Size(screenSize.width, 140),
           child: Container(
-            child: Stack(
-              alignment: AlignmentDirectional.centerStart,
+            child: Row(
               children: [
-                Padding(
+                Container(
+                  width: sideAreaWidth,
                   padding: EdgeInsets.symmetric(horizontal: sideAreaWidth / 3),
                   child: InkWell(
                     child: Icon(
                       MdiIcons.menu,
                       color: Colors.white,
-                      size: 80,
+                      size: sideAreaWidth / 4,
                     ),
                     onTap: () => _scaffoldKey.currentState.openDrawer(),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: sideAreaWidth),
-                  child: TitleParagraph(),
+                // TitleParagraph()内のAuto size textがConstraintsがないと働かないので、
+                // Expandedする
+                Expanded(
+                  child: Container(
+                    child: TitleParagraph(),
+                  ),
+                ),
+                // 位置調整
+                SizedBox(
+                  width: sideAreaWidth,
                 ),
               ],
             ),
