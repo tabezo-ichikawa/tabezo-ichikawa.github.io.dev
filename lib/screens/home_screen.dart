@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_responsive_ui/widgets/widgets.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -78,29 +79,102 @@ class _HomeScreenDesktop extends StatelessWidget {
           fit: BoxFit.cover,
         ),
 
-        Scrollbar(
-          child: CustomScrollView(
-            primary: false,
-            slivers: <Widget>[
-              // SliverPadding(
-              //   padding: const EdgeInsets.all(0),
-              //   sliver: SliverToBoxAdapter(
-              //     child: Container(
-              //       child: Padding(
-              //         padding: EdgeInsets.symmetric(horizontal: sideAreaWidth),
-              //         child: TitleParagraph(),
-              //       ),
-              //       color: Colors.black,
-              //     ),
-              //   ),
-              // ),
-              SliverPadding(
-                padding: EdgeInsets.symmetric(horizontal: sideAreaWidth),
-                sliver: LogoLinkSliverGrid(),
-              ),
-            ],
+        // logo links
+        Container(
+          constraints: BoxConstraints(
+            maxHeight: screenSize.height,
+            maxWidth: screenSize.width,
           ),
-        ),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 0, vertical: 40),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                        child: LogoLink(
+                          logoSize: null,
+                          icon: MdiIcons.spotify,
+                          logoColor: Colors.black,
+                          url: null,
+                        ),
+                      ),
+                      Expanded(
+                        child: LogoLink(
+                          logoSize: null,
+                          icon: MdiIcons.spotify,
+                          logoColor: Colors.black,
+                          url: null,
+                        ),
+                      ),
+                      Expanded(
+                        child: LogoLink(
+                          logoSize: null,
+                          icon: MdiIcons.spotify,
+                          logoColor: Colors.black,
+                          url: null,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                        child: LogoLink(
+                          logoSize: null,
+                          icon: MdiIcons.spotify,
+                          logoColor: Colors.black,
+                          url: null,
+                        ),
+                      ),
+                      Expanded(
+                        child: LogoLink(
+                          logoSize: null,
+                          icon: MdiIcons.spotify,
+                          logoColor: Colors.black,
+                          url: null,
+                        ),
+                      ),
+                      Expanded(
+                        child: LogoLink(
+                          logoSize: null,
+                          icon: MdiIcons.spotify,
+                          logoColor: Colors.black,
+                          url: null,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        )
+
+        // Scrollbar(
+        //   child: CustomScrollView(
+        //     primary: false,
+
+        //     slivers: <Widget>[
+
+        //       SliverPadding(
+        //         padding: EdgeInsets.symmetric(
+        //           horizontal: sideAreaWidth,
+        //           vertical: 0,
+        //         ),
+        //         sliver: LogoLinkSliverGrid(
+        //           sideAreaWidth: sideAreaWidth,
+        //         ),
+        //       ),
+        //     ],
+        //   ),
+        // ),
       ],
     );
   }

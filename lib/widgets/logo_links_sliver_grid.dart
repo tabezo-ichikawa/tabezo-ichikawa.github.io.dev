@@ -3,12 +3,20 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'logo_link.dart';
 
 class LogoLinkSliverGrid extends StatelessWidget {
+  final double sideAreaWidth;
+
+  const LogoLinkSliverGrid({
+    Key key,
+    @required this.sideAreaWidth,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SliverGrid.count(
-      crossAxisSpacing: 20,
-      mainAxisSpacing: 20,
+      crossAxisSpacing: 0,
+      mainAxisSpacing: 0,
       crossAxisCount: 3,
+      
       children: <Widget>[
         Container(
           padding: const EdgeInsets.all(8),

@@ -64,7 +64,7 @@ class _NavScreenState extends State<NavScreen> {
                 ),
                 // 位置調整
                 SizedBox(
-                  width: sideAreaWidth,
+                  width: 0,
                 ),
               ],
             ),

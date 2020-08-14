@@ -21,7 +21,7 @@ class LogoLink extends StatelessWidget {
     return Container(
       child: InkWell(
         child: FittedBox(
-          fit: BoxFit.fill,
+          fit: BoxFit.contain,
           child: Icon(
             icon,
             size: logoSize,
