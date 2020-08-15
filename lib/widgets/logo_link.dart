@@ -20,12 +20,9 @@ class LogoLink extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: InkWell(
-        child: FittedBox(
-          fit: BoxFit.contain,
-          child: Icon(
-            icon,
-            size: logoSize,
-          ),
+        child: Icon(
+          icon,
+          size: 80,
         ),
         onTap: () async {
           if (await canLaunch(url)) {
@@ -35,15 +32,14 @@ class LogoLink extends StatelessWidget {
           }
         },
       ),
-      color: Colors.black12,
-      // // DEBUG
-      // decoration: BoxDecoration(
-      //   border: Border.all(
-      //     color: Colors.red,
-      //     width: 8.0,
-      //   ),
-      // ),
-      // // ~DEBUG
+      // DEBUG
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.red,
+          width: 8.0,
+        ),
+      ),
+      // ~DEBUG
     );
   }
 }
