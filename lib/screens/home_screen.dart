@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_facebook_responsive_ui/widgets/widgets.dart';
+import 'package:tabezo_web/widgets/widgets.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -72,8 +72,6 @@ class _HomeScreenDesktop extends StatelessWidget {
 
         // Splashエフェクトを見せるためにはInk.imageで画像を描画する必要がある
         Ink.image(
-          // image: NetworkImage(
-          //     'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
           image: const AssetImage(
               'assets/images/IMG_5277.JPG'), // full path was needed
           fit: BoxFit.cover,

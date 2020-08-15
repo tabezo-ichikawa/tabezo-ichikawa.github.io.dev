@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'config/palette.dart';
 import 'screens/screens.dart';
 
 void main() {

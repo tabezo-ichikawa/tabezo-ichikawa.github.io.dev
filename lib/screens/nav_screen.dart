@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_facebook_responsive_ui/screens/home_screen.dart';
-import 'package:flutter_facebook_responsive_ui/widgets/widgets.dart';
+import 'package:tabezo_web/screens/home_screen.dart';
+import 'package:tabezo_web/widgets/widgets.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-
-import '../data/data.dart';
-import '../data/data.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NavScreen extends StatefulWidget {
   @override
@@ -15,14 +13,7 @@ class _NavScreenState extends State<NavScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final List<Widget> _screens = [
     HomeScreen(),
-  ];
-
-  final List<IconData> _icons = const [
-    Icons.home,
-    Icons.ondemand_video,
-    MdiIcons.accountCircleOutline,
-    MdiIcons.accountGroupOutline,
-    Icons.menu,
+    Container(),
   ];
 
   int _selectedIndex = 0;
@@ -34,7 +25,7 @@ class _NavScreenState extends State<NavScreen> {
 
     return DefaultTabController(
       //FIXME: lengthはページの数で、drawerのメニューの数に対応させなければならない
-      length: _icons.length,
+      length: _screens.length,
       child: Scaffold(
         key: _scaffoldKey,
         drawer: _getDrawer(context),
@@ -64,7 +55,7 @@ class _NavScreenState extends State<NavScreen> {
                 ),
                 // 位置調整
                 SizedBox(
-                  width: 0,
+                  width: sideAreaWidth / 6,
                 ),
               ],
             ),
@@ -79,29 +70,88 @@ class _NavScreenState extends State<NavScreen> {
       ),
     );
   }
-}
 
-Drawer _getDrawer(BuildContext context) {
-  return Drawer(
-    child: ListView(
-      children: <Widget>[
-        const DrawerHeader(
-          child: Text(
-            'My App',
-            style: TextStyle(
-              fontSize: 24,
-              color: Colors.white,
+  // TODO: mapかなにかでlistの数だけdrawerのメニューを出すようにできる
+  Drawer _getDrawer(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        children: <Widget>[
+          // const DrawerHeader(
+          //   child: Text(
+          //     'My App',
+          //     style: TextStyle(
+          //       fontSize: 24,
+          //       color: Colors.white,
+          //     ),
+          //   ),
+          //   decoration: BoxDecoration(
+          //     color: Colors.black,
+          //   ),
+          // ),
+          SizedBox(
+            height: 100,
+          ),
+          ListTile(
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                const Text('Home'),
+              ],
             ),
+            onTap: () {
+              Navigator.pop(context);
+              setState(
+                () => _selectedIndex = 0,
+              );
+            },
           ),
-          decoration: BoxDecoration(
-            color: Colors.black,
+          ListTile(
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                const Text('About'),
+              ],
+            ),
+            onTap: () {
+              Navigator.pop(context);
+              setState(
+                () => _selectedIndex = 1,
+              );
+            },
           ),
-        ),
-        ListTile(
-          title: const Text('Los Angeles'),
-          onTap: () => Navigator.pop(context),
-        ),
-      ],
-    ),
-  );
+          ListTile(
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                const Text('More info'),
+              ],
+            ),
+            onTap: () {
+              Navigator.pop(context);
+              showAboutDialog(
+                context: context,
+                applicationLegalese:
+                    'Visit our Github for the source code of this page.',
+                children: [
+                  InkWell(
+                    child: const Icon(
+                      MdiIcons.github,
+                      size: 40,
+                    ),
+                    onTap: () async {
+                      if (await canLaunch(
+                          'https://github.com/tabezo-ichikawa/tabezo-ichikawa.github.io.dev')) {
+                        await launch(
+                            'https://github.com/tabezo-ichikawa/tabezo-ichikawa.github.io.dev');
+                      }
+                    },
+                  ),
+                ],
+              );
+            },
+          ),
+        ],
+      ),
+    );
+  }
 }

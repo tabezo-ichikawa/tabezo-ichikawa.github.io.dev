@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_facebook_responsive_ui/widgets/widgets.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-import '../config/palette.dart';
-import '../models/user_model.dart';
-
 class CustomAppBar extends StatelessWidget {
-  final User currentUser;
   final List<IconData> icons;
   final int selectedIndex;
   final Function() onTap;
 
   const CustomAppBar({
     Key key,
-    @required this.currentUser,
     @required this.icons,
     @required this.selectedIndex,
     @required this.onTap,
