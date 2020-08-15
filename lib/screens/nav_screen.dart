@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tabezo_web/screens/about_screen.dart';
 import 'package:tabezo_web/screens/home_screen.dart';
 import 'package:tabezo_web/widgets/widgets.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -13,7 +14,7 @@ class _NavScreenState extends State<NavScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final List<Widget> _screens = [
     HomeScreen(),
-    Container(),
+    AboutScreen(),
   ];
 
   int _selectedIndex = 0;
@@ -26,47 +27,52 @@ class _NavScreenState extends State<NavScreen> {
     return DefaultTabController(
       //FIXME: lengthはページの数で、drawerのメニューの数に対応させなければならない
       length: _screens.length,
-      child: Scaffold(
-        key: _scaffoldKey,
-        drawer: _getDrawer(context),
-        appBar: PreferredSize(
-          preferredSize: Size(screenSize.width, 140),
-          child: Container(
-            child: Row(
-              children: [
-                Container(
-                  width: sideAreaWidth,
-                  padding: EdgeInsets.symmetric(horizontal: sideAreaWidth / 3),
-                  child: InkWell(
-                    child: Icon(
-                      MdiIcons.menu,
-                      color: Colors.white,
-                      size: sideAreaWidth / 4,
+      child: Stack(
+        children: [
+          Scaffold(
+            extendBodyBehindAppBar: true,
+            key: _scaffoldKey,
+            drawer: _getDrawer(context),
+            appBar: PreferredSize(
+              preferredSize: Size(screenSize.width, 140),
+              child: Container(
+                child: Row(
+                  children: [
+                    Container(
+                      width: sideAreaWidth,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: sideAreaWidth / 3),
+                      child: InkWell(
+                        child: const Icon(
+                          MdiIcons.menu,
+                          color: Colors.black,
+                        ),
+                        onTap: () => _scaffoldKey.currentState.openDrawer(),
+                      ),
                     ),
-                    onTap: () => _scaffoldKey.currentState.openDrawer(),
-                  ),
+                    // TitleParagraph()内のAuto size textがConstraintsがないと働かないので、
+                    // Expandedする
+                    Expanded(
+                      child: Container(
+                        child: TitleParagraph(),
+                      ),
+                    ),
+                    // 位置調整
+                    SizedBox(
+                      width: sideAreaWidth / 6,
+                    ),
+                  ],
                 ),
-                // TitleParagraph()内のAuto size textがConstraintsがないと働かないので、
-                // Expandedする
-                Expanded(
-                  child: Container(
-                    child: TitleParagraph(),
-                  ),
-                ),
-                // 位置調整
-                SizedBox(
-                  width: sideAreaWidth / 6,
-                ),
-              ],
+                color: Colors.transparent,
+              ),
             ),
-            color: Colors.black,
+            body: IndexedStack(
+              //TODO: 複数ページ扱うとき_selectedIndexをちゃんと管理しないといけない
+              index: _selectedIndex,
+              children: _screens,
+            ),
           ),
-        ),
-        body: IndexedStack(
-          //TODO: 複数ページ扱うとき_selectedIndexをちゃんと管理しないといけない
-          index: _selectedIndex,
-          children: _screens,
-        ),
+        ],
       ),
     );
   }
@@ -76,18 +82,6 @@ class _NavScreenState extends State<NavScreen> {
     return Drawer(
       child: ListView(
         children: <Widget>[
-          // const DrawerHeader(
-          //   child: Text(
-          //     'My App',
-          //     style: TextStyle(
-          //       fontSize: 24,
-          //       color: Colors.white,
-          //     ),
-          //   ),
-          //   decoration: BoxDecoration(
-          //     color: Colors.black,
-          //   ),
-          // ),
           SizedBox(
             height: 100,
           ),

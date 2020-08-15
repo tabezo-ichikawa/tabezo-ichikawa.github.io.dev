@@ -84,7 +84,7 @@ class _HomeScreenDesktop extends StatelessWidget {
             maxWidth: screenSize.width,
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 0, vertical: 40),
+            padding: EdgeInsets.fromLTRB(0, 200, 0, 0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
