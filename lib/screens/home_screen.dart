@@ -84,73 +84,75 @@ class _HomeScreenDesktop extends StatelessWidget {
             maxWidth: screenSize.width,
           ),
           child: Padding(
-            padding: EdgeInsets.fromLTRB(0, 200, 0, 0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Expanded(
-                        child: LogoLink(
-                          logoSize: null,
-                          icon: MdiIcons.spotify,
-                          logoColor: Colors.black,
-                          url: null,
+            padding: const EdgeInsets.only(top: 140),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Expanded(
+                          child: LogoLink(
+                            logoSize: null,
+                            icon: MdiIcons.spotify,
+                            logoColor: Colors.black,
+                            url: null,
+                          ),
                         ),
-                      ),
-                      Expanded(
-                        child: LogoLink(
-                          logoSize: null,
-                          icon: MdiIcons.spotify,
-                          logoColor: Colors.black,
-                          url: null,
+                        Expanded(
+                          child: LogoLink(
+                            logoSize: null,
+                            icon: MdiIcons.spotify,
+                            logoColor: Colors.black,
+                            url: null,
+                          ),
                         ),
-                      ),
-                      Expanded(
-                        child: LogoLink(
-                          logoSize: null,
-                          icon: MdiIcons.spotify,
-                          logoColor: Colors.black,
-                          url: null,
+                        Expanded(
+                          child: LogoLink(
+                            logoSize: null,
+                            icon: MdiIcons.spotify,
+                            logoColor: Colors.black,
+                            url: null,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Expanded(
-                        child: LogoLink(
-                          logoSize: null,
-                          icon: MdiIcons.spotify,
-                          logoColor: Colors.black,
-                          url: null,
+                  Expanded(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Expanded(
+                          child: LogoLink(
+                            logoSize: null,
+                            icon: MdiIcons.spotify,
+                            logoColor: Colors.black,
+                            url: null,
+                          ),
                         ),
-                      ),
-                      Expanded(
-                        child: LogoLink(
-                          logoSize: null,
-                          icon: MdiIcons.spotify,
-                          logoColor: Colors.black,
-                          url: null,
+                        Expanded(
+                          child: LogoLink(
+                            logoSize: null,
+                            icon: MdiIcons.spotify,
+                            logoColor: Colors.black,
+                            url: null,
+                          ),
                         ),
-                      ),
-                      Expanded(
-                        child: LogoLink(
-                          logoSize: null,
-                          icon: MdiIcons.spotify,
-                          logoColor: Colors.black,
-                          url: null,
+                        Expanded(
+                          child: LogoLink(
+                            logoSize: null,
+                            icon: MdiIcons.spotify,
+                            logoColor: Colors.black,
+                            url: null,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         )

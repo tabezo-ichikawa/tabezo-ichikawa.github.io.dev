@@ -33,15 +33,15 @@ class TitleParagraph extends StatelessWidget {
               fontSize: 40,
             ),
           ),
-          const AutoSizeText(
-            'Music and video and ...something creator(s) currently based in Hamamatsu city, Japan.',
-            textAlign: TextAlign.left,
-            maxLines: 2,
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 20,
-            ),
-          ),
+          // const AutoSizeText(
+          //   'Music and video and ...something creator(s) currently based in Hamamatsu city, Japan.',
+          //   textAlign: TextAlign.left,
+          //   maxLines: 2,
+          //   style: TextStyle(
+          //     color: Colors.black,
+          //     fontSize: 20,
+          //   ),
+          // ),
         ],
       ),
     );
