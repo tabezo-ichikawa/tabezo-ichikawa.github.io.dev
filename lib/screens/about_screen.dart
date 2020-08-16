@@ -22,6 +22,10 @@ class _AboutScreenState extends State<AboutScreen> {
           fit: BoxFit.cover,
         ),
 
+        Ink(
+          color: Colors.white70,
+        ),
+
         // Profile
         Padding(
           padding: EdgeInsets.fromLTRB(
@@ -30,12 +34,18 @@ class _AboutScreenState extends State<AboutScreen> {
             sideAreaWidth,
             0,
           ),
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.only(
-              top: 20,
-            ),
-            child: Center(
-              child: AboutParagraph(),
+          child: Center(
+            heightFactor: 1.3,
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(
+                parent: AlwaysScrollableScrollPhysics(),
+              ),
+              padding: const EdgeInsets.only(
+                top: 20,
+              ),
+              child: Center(
+                child: AboutParagraph(),
+              ),
             ),
           ),
         ),
