@@ -13,7 +13,7 @@ class TitleParagraph extends StatelessWidget {
         children: [
           AutoSizeText(
             '市川たべ蔵',
-            maxLines: 2,
+            maxLines: 1,
             textAlign: TextAlign.left,
             style: GoogleFonts.sawarabiMincho(
               textStyle: const TextStyle(
@@ -25,7 +25,7 @@ class TitleParagraph extends StatelessWidget {
           ),
           AutoSizeText(
             'tabezo ichikawa',
-            maxLines: 1,
+            maxLines: 2,
             textAlign: TextAlign.left,
             style: GoogleFonts.fasterOne(
               textStyle: const TextStyle(
