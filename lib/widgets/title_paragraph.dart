@@ -23,14 +23,21 @@ class TitleParagraph extends StatelessWidget {
               ),
             ),
           ),
-          const AutoSizeText(
-            'Tabezo Ichikawa',
+          AutoSizeText(
+            'tabezo ichikawa',
             maxLines: 1,
             textAlign: TextAlign.left,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-              fontSize: 40,
+            // style: TextStyle(
+            //   fontWeight: FontWeight.bold,
+            //   color: Colors.black,
+            //   fontSize: 40,
+            // ),
+            style: GoogleFonts.fasterOne(
+              textStyle: const TextStyle(
+                letterSpacing: 10.0,
+                color: Colors.black,
+                fontSize: 40,
+              ),
             ),
           ),
           // const AutoSizeText(
