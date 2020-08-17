@@ -46805,7 +46805,7 @@ else if(s>=800)return this.a.c
 else return this.a.c}}
 N.Ce.prototype={
 C:function(a){var s=null,r=t.Aw,q=t.qt
-return M.ce(s,T.jy(H.a([M.a1M("\u5e02\u5ddd\u305f\u3079\u8535",1,Z.a5I(s,s,s,s,s,s,s,"SawarabiMincho",s,s,s,s,P.aM([new Z.lH(C.z,C.l3),new F.pS("f3beec4e12191867fb2f0f6f9b79f2367eab607cb6a1f28f445a8ae4b13f6c15",1081468)],r,q),s,s,s,s,s,s,C.AF,s),C.ij),M.a1M("tabezo ichikawa",1,Z.a5I(s,s,s,s,s,s,s,"FasterOne",s,s,s,s,P.aM([new Z.lH(C.z,C.l3),new F.pS("fbde65e70c94e07f0152fa5b1506d0a77cf338a94d29423fec1aa0730891cd04",44372)],r,q),s,s,s,s,s,s,C.zE,s),C.ij)],t.t),C.dn,C.hC,C.ab),s,s,s,s,s,s,s)}}
+return M.ce(s,T.jy(H.a([M.a1M("\u5e02\u5ddd\u305f\u3079\u8535",2,Z.a5I(s,s,s,s,s,s,s,"SawarabiMincho",s,s,s,s,P.aM([new Z.lH(C.z,C.l3),new F.pS("f3beec4e12191867fb2f0f6f9b79f2367eab607cb6a1f28f445a8ae4b13f6c15",1081468)],r,q),s,s,s,s,s,s,C.AF,s),C.ij),M.a1M("tabezo ichikawa",1,Z.a5I(s,s,s,s,s,s,s,"FasterOne",s,s,s,s,P.aM([new Z.lH(C.z,C.l3),new F.pS("fbde65e70c94e07f0152fa5b1506d0a77cf338a94d29423fec1aa0730891cd04",44372)],r,q),s,s,s,s,s,s,C.zE,s),C.ij)],t.t),C.dn,C.hC,C.ab),s,s,s,s,s,s,s)}}
 E.n7.prototype={
 gk:function(a){return this.b},
 i:function(a,b){if(b>=this.b)throw H.c(P.b7(b,this,null,null,null))

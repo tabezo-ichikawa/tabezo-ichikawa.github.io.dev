@@ -13,7 +13,7 @@ class TitleParagraph extends StatelessWidget {
         children: [
           AutoSizeText(
             '市川たべ蔵',
-            maxLines: 1,
+            maxLines: 2,
             textAlign: TextAlign.left,
             style: GoogleFonts.sawarabiMincho(
               textStyle: const TextStyle(
@@ -27,11 +27,6 @@ class TitleParagraph extends StatelessWidget {
             'tabezo ichikawa',
             maxLines: 1,
             textAlign: TextAlign.left,
-            // style: TextStyle(
-            //   fontWeight: FontWeight.bold,
-            //   color: Colors.black,
-            //   fontSize: 40,
-            // ),
             style: GoogleFonts.fasterOne(
               textStyle: const TextStyle(
                 letterSpacing: 10.0,
@@ -40,15 +35,6 @@ class TitleParagraph extends StatelessWidget {
               ),
             ),
           ),
-          // const AutoSizeText(
-          //   'Music and video and ...something creator(s) currently based in Hamamatsu city, Japan.',
-          //   textAlign: TextAlign.left,
-          //   maxLines: 2,
-          //   style: TextStyle(
-          //     color: Colors.black,
-          //     fontSize: 20,
-          //   ),
-          // ),
         ],
       ),
     );
