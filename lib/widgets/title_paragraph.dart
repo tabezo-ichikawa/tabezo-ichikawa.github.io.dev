@@ -18,8 +18,9 @@ class TitleParagraph extends StatelessWidget {
             style: GoogleFonts.sawarabiMincho(
               textStyle: const TextStyle(
                 fontWeight: FontWeight.bold,
+                letterSpacing: 10,
                 color: Colors.black,
-                fontSize: 20,
+                fontSize: 15,
               ),
             ),
           ),
@@ -29,7 +30,7 @@ class TitleParagraph extends StatelessWidget {
             textAlign: TextAlign.left,
             style: GoogleFonts.fasterOne(
               textStyle: const TextStyle(
-                letterSpacing: 10.0,
+                letterSpacing: 10,
                 color: Colors.black,
                 fontSize: 40,
               ),

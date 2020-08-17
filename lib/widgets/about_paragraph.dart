@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:tabezo_web/config/paragraphs.dart';
 
 class AboutParagraph extends StatelessWidget {
@@ -13,15 +14,13 @@ class AboutParagraph extends StatelessWidget {
           style: _textStyle.merge(
             const TextStyle(
               height: 1.4,
-              fontFamily: 'DejavuMono',
             ),
           ),
           children: <TextSpan>[
-            const TextSpan(
+            TextSpan(
               text: 'Who we are:',
-              style: TextStyle(
+              style: GoogleFonts.josefinSans(
                 fontWeight: FontWeight.bold,
-                fontFamily: 'DejavuMono',
                 fontSize: 40,
               ),
             ),
@@ -32,12 +31,11 @@ class AboutParagraph extends StatelessWidget {
             const TextSpan(
               text: "\n\n\n",
             ),
-            const TextSpan(
+            TextSpan(
               text: 'What we do:',
-              style: TextStyle(
+              style: GoogleFonts.josefinSans(
                 fontWeight: FontWeight.bold,
                 fontSize: 40,
-                fontFamily: 'DejavuMono',
               ),
             ),
             const TextSpan(
@@ -47,12 +45,11 @@ class AboutParagraph extends StatelessWidget {
             const TextSpan(
               text: "\n\n\n",
             ),
-            const TextSpan(
+            TextSpan(
               text: 'What you can do:',
-              style: TextStyle(
+              style: GoogleFonts.josefinSans(
                 fontWeight: FontWeight.bold,
                 fontSize: 40,
-                fontFamily: 'DejavuMono',
               ),
             ),
             const TextSpan(

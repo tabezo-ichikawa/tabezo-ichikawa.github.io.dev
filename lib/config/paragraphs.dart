@@ -1,20 +1,20 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Paragraphs {
-  static const TextSpan whoWeAre = TextSpan(
+  static TextSpan whoWeAre = TextSpan(
     text: 'Music and video and ...something creator(s) '
         'and software developpers '
         'currently based in Hamamatsu city, Japan.',
-    style: TextStyle(
-      fontSize: 18,
-      letterSpacing: 1,
-      fontFamily: 'DejavuMono',
+    style: GoogleFonts.josefinSans(
+      fontWeight: FontWeight.w600,
+      fontSize: 20,
     ),
   );
 
-  static const TextSpan whatWeDo = TextSpan(
+  static TextSpan whatWeDo = TextSpan(
     text:
         "It's a tricky thing to have a half-hearted creativity, and in contrast, it makes life void.... "
         "If you create something on impulse and then throw it into the ocean of the internet, what will it become...? "
@@ -22,25 +22,24 @@ class Paragraphs {
         "But what if we got together and piled on top of each other? "
         "The circle of water that each pitch brings to the table could be something else, overlapping with each other. At least that's what Huygens' principle is saying. "
         "That's what we are trying to do.",
-    style: TextStyle(
-      fontSize: 18,
-      letterSpacing: 1,
-      fontFamily: 'DejavuMono',
+    style: GoogleFonts.josefinSans(
+      fontWeight: FontWeight.w600,
+      fontSize: 20,
     ),
   );
 
   static TextSpan whatYouCanDo = TextSpan(
-    style: TextStyle(
-      fontSize: 18,
-      letterSpacing: 1,
-      fontFamily: 'DejavuMono',
+    style: GoogleFonts.josefinSans(
+      fontWeight: FontWeight.w600,
+      fontSize: 20,
     ),
     children: <TextSpan>[
       TextSpan(
         text: 'As an art lover: ',
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontFamily: 'DejavuMono',
+        style: GoogleFonts.josefinSans(
+          fontWeight: FontWeight.w700,
+          fontSize: 20,
+          color: Colors.redAccent,
         ),
       ),
       TextSpan(
@@ -50,9 +49,10 @@ class Paragraphs {
       ),
       TextSpan(
         text: 'As a creator: ',
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontFamily: 'DejavuMono',
+        style: GoogleFonts.josefinSans(
+          fontWeight: FontWeight.w700,
+          fontSize: 20,
+          color: Colors.redAccent,
         ),
       ),
       TextSpan(
@@ -60,9 +60,10 @@ class Paragraphs {
       ),
       TextSpan(
         text: 'Discord server',
-        style: TextStyle(
+        style: GoogleFonts.josefinSans(
+          fontWeight: FontWeight.w700,
+          fontSize: 20,
           color: Colors.lightBlue,
-          fontFamily: 'DejavuMono',
         ),
         recognizer: TapGestureRecognizer()
           ..onTap = () async {
