@@ -5,57 +5,44 @@ import 'package:tabezo_web/config/paragraphs.dart';
 class AboutParagraph extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _textStyle = DefaultTextStyle.of(context).style;
+    final myTextTheme = Theme.of(context).textTheme;
+    final myParagraphs = Paragraphs(context);
 
     return Container(
       //
       child: RichText(
         text: TextSpan(
-          style: _textStyle.merge(
-            const TextStyle(
-              height: 1.4,
-            ),
-          ),
           children: <TextSpan>[
             TextSpan(
               text: 'Who we are:',
-              style: GoogleFonts.josefinSans(
-                fontWeight: FontWeight.bold,
-                fontSize: 40,
-              ),
+              style: myTextTheme.headline3,
             ),
             const TextSpan(
               text: "\n",
             ),
-            Paragraphs.whoWeAre,
+            myParagraphs.whoWeAre,
             const TextSpan(
               text: "\n\n\n",
             ),
             TextSpan(
               text: 'What we do:',
-              style: GoogleFonts.josefinSans(
-                fontWeight: FontWeight.bold,
-                fontSize: 40,
-              ),
+              style: myTextTheme.headline3,
             ),
             const TextSpan(
               text: "\n",
             ),
-            Paragraphs.whatWeDo,
+            myParagraphs.whatWeDo,
             const TextSpan(
               text: "\n\n\n",
             ),
             TextSpan(
               text: 'What you can do:',
-              style: GoogleFonts.josefinSans(
-                fontWeight: FontWeight.bold,
-                fontSize: 40,
-              ),
+              style: myTextTheme.headline3,
             ),
             const TextSpan(
               text: "\n",
             ),
-            Paragraphs.whatYouCanDo,
+            myParagraphs.whatYouCanDo,
             const TextSpan(
               text: "\n",
             ),
