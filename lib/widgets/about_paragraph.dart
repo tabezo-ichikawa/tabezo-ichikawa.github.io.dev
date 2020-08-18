@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tabezo_web/config/paragraphs.dart';
+import 'package:tabezo_web/widgets/responsive.dart';
 
 class AboutParagraph extends StatelessWidget {
   @override
@@ -15,7 +16,9 @@ class AboutParagraph extends StatelessWidget {
           children: <TextSpan>[
             TextSpan(
               text: 'Who we are:',
-              style: myTextTheme.headline3,
+              style: Responsive.isDesktop(context)
+                  ? myTextTheme.headline3
+                  : myTextTheme.headline5,
             ),
             const TextSpan(
               text: "\n",
@@ -26,7 +29,9 @@ class AboutParagraph extends StatelessWidget {
             ),
             TextSpan(
               text: 'What we do:',
-              style: myTextTheme.headline3,
+              style: Responsive.isDesktop(context)
+                  ? myTextTheme.headline3
+                  : myTextTheme.headline5,
             ),
             const TextSpan(
               text: "\n",
@@ -37,7 +42,9 @@ class AboutParagraph extends StatelessWidget {
             ),
             TextSpan(
               text: 'What you can do:',
-              style: myTextTheme.headline3,
+              style: Responsive.isDesktop(context)
+                  ? myTextTheme.headline3
+                  : myTextTheme.headline5,
             ),
             const TextSpan(
               text: "\n",

@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
       title: 'Tabezo Ichikawa\'s homepage',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         textTheme: TextTheme(
           headline1: GoogleFonts.josefinSans(
@@ -43,6 +42,9 @@ class MyApp extends StatelessWidget {
               fontSize: 12, fontWeight: FontWeight.w400, letterSpacing: 0.4),
           overline: GoogleFonts.roboto(
               fontSize: 10, fontWeight: FontWeight.w400, letterSpacing: 1.5),
+        ).apply(
+          bodyColor: Colors.black87,
+          displayColor: Colors.black87,
         ),
       ),
       home: NavScreen(),

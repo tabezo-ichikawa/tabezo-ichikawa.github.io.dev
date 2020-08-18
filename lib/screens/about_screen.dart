@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tabezo_web/widgets/about_paragraph.dart';
+import 'package:tabezo_web/widgets/responsive.dart';
 
 class AboutScreen extends StatefulWidget {
   @override
@@ -9,8 +10,8 @@ class AboutScreen extends StatefulWidget {
 class _AboutScreenState extends State<AboutScreen> {
   @override
   Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
-    final double sideAreaWidth = screenSize.width / 6;
+    final screenSize = MediaQuery.of(context).size;
+    final sideAreaWidth = screenSize.width / 6;
 
     return Stack(
       children: <Widget>[
@@ -31,7 +32,7 @@ class _AboutScreenState extends State<AboutScreen> {
           padding: EdgeInsets.fromLTRB(
             sideAreaWidth,
             140,
-            sideAreaWidth,
+            Responsive.isDesktop(context) ? sideAreaWidth : sideAreaWidth / 2,
             0,
           ),
           child: Center(

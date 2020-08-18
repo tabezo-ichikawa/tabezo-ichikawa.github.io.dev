@@ -80,71 +80,74 @@ class _NavScreenState extends State<NavScreen> {
   // TODO: mapかなにかでlistの数だけdrawerのメニューを出すようにできる
   Drawer _getDrawer(BuildContext context) {
     return Drawer(
-      child: ListView(
-        children: <Widget>[
-          SizedBox(
-            height: 100,
-          ),
-          ListTile(
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                const Text('Home'),
-              ],
+      child: Container(
+        color: Colors.yellow,
+        child: ListView(
+          children: <Widget>[
+            const SizedBox(
+              height: 100,
             ),
-            onTap: () {
-              Navigator.pop(context);
-              setState(
-                () => _selectedIndex = 0,
-              );
-            },
-          ),
-          ListTile(
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                const Text('About'),
-              ],
-            ),
-            onTap: () {
-              Navigator.pop(context);
-              setState(
-                () => _selectedIndex = 1,
-              );
-            },
-          ),
-          ListTile(
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                const Text('More info'),
-              ],
-            ),
-            onTap: () {
-              Navigator.pop(context);
-              showAboutDialog(
-                context: context,
-                applicationLegalese:
-                    'Visit our Github for the source code of this page.',
+            ListTile(
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  InkWell(
-                    child: const Icon(
-                      MdiIcons.github,
-                      size: 40,
-                    ),
-                    onTap: () async {
-                      if (await canLaunch(
-                          'https://github.com/tabezo-ichikawa/tabezo-ichikawa.github.io.dev')) {
-                        await launch(
-                            'https://github.com/tabezo-ichikawa/tabezo-ichikawa.github.io.dev');
-                      }
-                    },
-                  ),
+                  const Text('Home'),
                 ],
-              );
-            },
-          ),
-        ],
+              ),
+              onTap: () {
+                Navigator.pop(context);
+                setState(
+                  () => _selectedIndex = 0,
+                );
+              },
+            ),
+            ListTile(
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  const Text('About'),
+                ],
+              ),
+              onTap: () {
+                Navigator.pop(context);
+                setState(
+                  () => _selectedIndex = 1,
+                );
+              },
+            ),
+            ListTile(
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  const Text('More info'),
+                ],
+              ),
+              onTap: () {
+                Navigator.pop(context);
+                showAboutDialog(
+                  context: context,
+                  applicationLegalese:
+                      'Visit our Github for the source code of this page.',
+                  children: [
+                    InkWell(
+                      child: const Icon(
+                        MdiIcons.github,
+                        size: 40,
+                      ),
+                      onTap: () async {
+                        if (await canLaunch(
+                            'https://github.com/tabezo-ichikawa/tabezo-ichikawa.github.io.dev')) {
+                          await launch(
+                              'https://github.com/tabezo-ichikawa/tabezo-ichikawa.github.io.dev');
+                        }
+                      },
+                    ),
+                  ],
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
