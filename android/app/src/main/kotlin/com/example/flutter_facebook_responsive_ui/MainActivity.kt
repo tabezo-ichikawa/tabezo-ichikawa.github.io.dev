@@ -1,4 +1,4 @@
-package com.example.flutter_facebook_responsive_ui
+package com.example.tabezo_ichikawa_web
 
 import io.flutter.embedding.android.FlutterActivity
 
