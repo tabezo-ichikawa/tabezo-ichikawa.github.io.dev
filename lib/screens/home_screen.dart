@@ -1,6 +1,8 @@
 import 'dart:ui';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:tabezo_web/widgets/widgets.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -78,103 +80,126 @@ class _HomeScreenDesktop extends StatelessWidget {
         ),
 
         // logo links
-        Container(
-          constraints: BoxConstraints(
-            maxHeight: screenSize.height,
-            maxWidth: screenSize.width,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.only(top: 140),
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Expanded(
-                          child: LogoLink(
-                            logoSize: null,
-                            icon: MdiIcons.spotify,
-                            logoColor: Colors.black,
-                            url: null,
+        Padding(
+          padding: const EdgeInsets.only(top: 140),
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(
+              parent: AlwaysScrollableScrollPhysics(),
+            ),
+            child: Container(
+              constraints: BoxConstraints(
+                maxHeight: screenSize.height,
+                maxWidth: screenSize.width,
+              ),
+              child: Center(
+                heightFactor: 0.4,
+                child: Padding(
+                  padding:
+                      EdgeInsets.fromLTRB(sideAreaWidth, 0, sideAreaWidth, 0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: 30,
+                            height: 30,
+                            child: LogoLink(
+                              logoSize: null,
+                              icon: MdiIcons.spotify,
+                              logoColor: Colors.black,
+                              url: null,
+                            ),
                           ),
-                        ),
-                        Expanded(
-                          child: LogoLink(
-                            logoSize: null,
-                            icon: MdiIcons.spotify,
-                            logoColor: Colors.black,
-                            url: null,
+                          Container(
+                            width: 30,
+                            height: 30,
+                            child: LogoLink(
+                              logoSize: null,
+                              icon: MdiIcons.apple,
+                              logoColor: Colors.black,
+                              url: null,
+                            ),
                           ),
-                        ),
-                        Expanded(
-                          child: LogoLink(
-                            logoSize: null,
-                            icon: MdiIcons.spotify,
-                            logoColor: Colors.black,
-                            url: null,
+                          Container(
+                            width: 30,
+                            height: 30,
+                            child: LogoLink(
+                              logoSize: null,
+                              icon: MdiIcons.instagram,
+                              logoColor: Colors.black,
+                              url: null,
+                            ),
                           ),
+                          Container(
+                            width: 30,
+                            height: 30,
+                            child: LogoLink(
+                              logoSize: null,
+                              icon: MdiIcons.twitter,
+                              logoColor: Colors.black,
+                              url: null,
+                            ),
+                          ),
+                          Container(
+                            width: 30,
+                            height: 30,
+                            child: LogoLink(
+                              logoSize: null,
+                              icon: MdiIcons.youtube,
+                              logoColor: Colors.black,
+                              url: null,
+                            ),
+                          ),
+                          Container(
+                            width: 30,
+                            height: 30,
+                            child: LogoLink(
+                              logoSize: null,
+                              icon: MdiIcons.discord,
+                              logoColor: Colors.black,
+                              url: null,
+                            ),
+                          ),
+                          Container(
+                            width: 30,
+                            height: 30,
+                            child: LogoLink(
+                              logoSize: null,
+                              icon: MdiIcons.github,
+                              logoColor: Colors.black,
+                              url: null,
+                            ),
+                          ),
+                          Container(
+                            width: 30,
+                            height: 30,
+                          ),
+                        ],
+                      ),
+                      Container(
+                        child: AutoSizeText(
+                          'We make music,\ndesign and code, de\nyaraseteitadaiteorimasu.',
+                          style: GoogleFonts.josefinSans(
+                              textStyle: TextStyle(
+                            fontSize: 64,
+                            fontWeight: FontWeight.w700,
+                            fontStyle: FontStyle.italic,
+                            color: Colors.black,
+                            letterSpacing: 10,
+                          )),
+                          maxLines: 5,
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                  Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Expanded(
-                          child: LogoLink(
-                            logoSize: null,
-                            icon: MdiIcons.spotify,
-                            logoColor: Colors.black,
-                            url: null,
-                          ),
-                        ),
-                        Expanded(
-                          child: LogoLink(
-                            logoSize: null,
-                            icon: MdiIcons.spotify,
-                            logoColor: Colors.black,
-                            url: null,
-                          ),
-                        ),
-                        Expanded(
-                          child: LogoLink(
-                            logoSize: null,
-                            icon: MdiIcons.spotify,
-                            logoColor: Colors.black,
-                            url: null,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
           ),
         )
-
-        // Scrollbar(
-        //   child: CustomScrollView(
-        //     primary: false,
-
-        //     slivers: <Widget>[
-
-        //       SliverPadding(
-        //         padding: EdgeInsets.symmetric(
-        //           horizontal: sideAreaWidth,
-        //           vertical: 0,
-        //         ),
-        //         sliver: LogoLinkSliverGrid(
-        //           sideAreaWidth: sideAreaWidth,
-        //         ),
-        //       ),
-        //     ],
-        //   ),
-        // ),
       ],
     );
   }
