@@ -81,10 +81,12 @@ class _HomeScreenDesktop extends StatelessWidget {
 
         // logo links
         Padding(
-          padding: EdgeInsets.fromLTRB(sideAreaWidth, 140, sideAreaWidth, 0),
+          padding: Responsive.isDesktop(context)
+              ? EdgeInsets.fromLTRB(sideAreaWidth, 140, sideAreaWidth, 0)
+              : EdgeInsets.fromLTRB(sideAreaWidth, 140, sideAreaWidth / 2, 0),
           child: Container(
             constraints: BoxConstraints(
-              maxHeight: screenSize.height,
+              maxHeight: screenSize.height / 3,
               maxWidth: screenSize.width,
             ),
             child: Column(
@@ -162,18 +164,25 @@ class _HomeScreenDesktop extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  child: Text(
-                    'We make music,\ndesign and code, de\nYarasete Itadaite Orimasu.',
-                    style: GoogleFonts.josefinSans(
-                      textStyle: TextStyle(
-                        fontSize: 64,
-                        fontWeight: FontWeight.bold,
-                        fontStyle: FontStyle.italic,
-                        color: Colors.black,
-                        letterSpacing: 10,
+                  child: Expanded(
+                    child: AutoSizeText.rich(
+                      TextSpan(
+                        text:
+                            'We make music,\ndesign and code, de\nYarasete Itadaite Orimasu.',
+                        style: GoogleFonts.josefinSans(
+                          textStyle: TextStyle(
+                            fontSize: 64,
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FontStyle.italic,
+                            color: Colors.black,
+                            letterSpacing: 10,
+                          ),
+                        ),
                       ),
+                      minFontSize: 0,
+                      stepGranularity: 0.1,
+                      textAlign: TextAlign.left,
                     ),
-                    maxLines: 5,
                   ),
                 ),
               ],
