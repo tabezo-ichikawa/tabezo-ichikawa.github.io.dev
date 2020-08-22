@@ -64,7 +64,7 @@ class _HomeScreenDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     final sideAreaWidth = screenSize.width / 6;
-    final shadowThickness = 0.8;
+    final shadowThickness = 1.5;
 
     return Stack(
       children: <Widget>[
@@ -178,7 +178,7 @@ class _HomeScreenDesktop extends StatelessWidget {
                             textStyle: TextStyle(
                               fontSize: 64,
                               fontWeight: FontWeight.bold,
-                              fontStyle: FontStyle.italic,
+                              fontStyle: FontStyle.normal,
                               shadows: [
                                 Shadow(
                                     // bottomLeft
