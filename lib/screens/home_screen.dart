@@ -62,8 +62,9 @@ class _HomeScreenDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
-    final double sideAreaWidth = screenSize.width / 6;
+    final screenSize = MediaQuery.of(context).size;
+    final sideAreaWidth = screenSize.width / 6;
+    final shadowThickness = 0.8;
 
     return Stack(
       children: <Widget>[
@@ -80,112 +81,139 @@ class _HomeScreenDesktop extends StatelessWidget {
         ),
 
         // logo links
-        Padding(
-          padding: Responsive.isDesktop(context)
-              ? EdgeInsets.fromLTRB(sideAreaWidth, 140, sideAreaWidth, 0)
-              : EdgeInsets.fromLTRB(sideAreaWidth, 140, sideAreaWidth / 2, 0),
-          child: Container(
-            constraints: BoxConstraints(
-              maxHeight: screenSize.height / 3,
-              maxWidth: screenSize.width,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  constraints: BoxConstraints(
-                    maxHeight: 30,
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        child: LogoLink(
-                          logoSize: null,
-                          icon: MdiIcons.spotify,
-                          logoColor: Colors.black,
-                          url: null,
-                        ),
-                      ),
-                      Container(
-                        child: LogoLink(
-                          logoSize: null,
-                          icon: MdiIcons.apple,
-                          logoColor: Colors.black,
-                          url: null,
-                        ),
-                      ),
-                      Container(
-                        child: LogoLink(
-                          logoSize: null,
-                          icon: MdiIcons.instagram,
-                          logoColor: Colors.black,
-                          url: null,
-                        ),
-                      ),
-                      Container(
-                        child: LogoLink(
-                          logoSize: null,
-                          icon: MdiIcons.twitter,
-                          logoColor: Colors.black,
-                          url: null,
-                        ),
-                      ),
-                      Container(
-                        child: LogoLink(
-                          logoSize: null,
-                          icon: MdiIcons.youtube,
-                          logoColor: Colors.black,
-                          url: null,
-                        ),
-                      ),
-                      Container(
-                        child: LogoLink(
-                          logoSize: null,
-                          icon: MdiIcons.discord,
-                          logoColor: Colors.black,
-                          url: null,
-                        ),
-                      ),
-                      Container(
-                        child: LogoLink(
-                          logoSize: null,
-                          icon: MdiIcons.github,
-                          logoColor: Colors.black,
-                          url: null,
-                        ),
-                      ),
-                      Container(
-                        width: 30,
-                        height: 30,
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  child: Expanded(
-                    child: AutoSizeText.rich(
-                      TextSpan(
-                        text:
-                            'We make music,\ndesign and code, de\nYarasete Itadaite Orimasu.',
-                        style: GoogleFonts.josefinSans(
-                          textStyle: TextStyle(
-                            fontSize: 64,
-                            fontWeight: FontWeight.bold,
-                            fontStyle: FontStyle.italic,
-                            color: Colors.black,
-                            letterSpacing: 10,
+        SingleChildScrollView(
+          physics: const BouncingScrollPhysics(
+            parent: AlwaysScrollableScrollPhysics(),
+          ),
+          child: Padding(
+            padding: Responsive.isDesktop(context)
+                ? EdgeInsets.fromLTRB(sideAreaWidth, 140, sideAreaWidth, 0)
+                : EdgeInsets.fromLTRB(sideAreaWidth, 140, sideAreaWidth / 2, 0),
+            child: Container(
+              constraints: BoxConstraints(
+                maxHeight: screenSize.height - 140,
+                maxWidth: screenSize.width,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    constraints: BoxConstraints(
+                      maxHeight: 30,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          child: LogoLink(
+                            logoSize: null,
+                            icon: MdiIcons.spotify,
+                            logoColor: Colors.black,
+                            url: null,
                           ),
                         ),
-                      ),
-                      minFontSize: 0,
-                      stepGranularity: 0.1,
-                      textAlign: TextAlign.left,
+                        Container(
+                          child: LogoLink(
+                            logoSize: null,
+                            icon: MdiIcons.apple,
+                            logoColor: Colors.black,
+                            url: null,
+                          ),
+                        ),
+                        Container(
+                          child: LogoLink(
+                            logoSize: null,
+                            icon: MdiIcons.instagram,
+                            logoColor: Colors.black,
+                            url: null,
+                          ),
+                        ),
+                        Container(
+                          child: LogoLink(
+                            logoSize: null,
+                            icon: MdiIcons.twitter,
+                            logoColor: Colors.black,
+                            url: null,
+                          ),
+                        ),
+                        Container(
+                          child: LogoLink(
+                            logoSize: null,
+                            icon: MdiIcons.youtube,
+                            logoColor: Colors.black,
+                            url: null,
+                          ),
+                        ),
+                        Container(
+                          child: LogoLink(
+                            logoSize: null,
+                            icon: MdiIcons.discord,
+                            logoColor: Colors.black,
+                            url: null,
+                          ),
+                        ),
+                        Container(
+                          child: LogoLink(
+                            logoSize: null,
+                            icon: MdiIcons.github,
+                            logoColor: Colors.black,
+                            url: null,
+                          ),
+                        ),
+                        Container(
+                          width: 30,
+                          height: 30,
+                        ),
+                      ],
                     ),
                   ),
-                ),
-              ],
+                  Container(
+                    child: Expanded(
+                      child: AutoSizeText.rich(
+                        TextSpan(
+                          text:
+                              'We make music,\ndesign and code, de\nYarasete Itadaite Orimasu.',
+                          style: GoogleFonts.josefinSans(
+                            textStyle: TextStyle(
+                              fontSize: 64,
+                              fontWeight: FontWeight.bold,
+                              fontStyle: FontStyle.italic,
+                              shadows: [
+                                Shadow(
+                                    // bottomLeft
+                                    offset: Offset(
+                                        -shadowThickness, -shadowThickness),
+                                    color: Colors.white70),
+                                // Shadow(
+                                //     // bottomRight
+                                //     offset: Offset(
+                                //         shadowThickness, -shadowThickness),
+                                //     color: Colors.white),
+                                Shadow(
+                                    // topRight
+                                    offset: Offset(
+                                        shadowThickness, shadowThickness),
+                                    color: Colors.white70),
+                                // Shadow(
+                                //     // topLeft
+                                //     offset: Offset(
+                                //         -shadowThickness, shadowThickness),
+                                //     color: Colors.white),
+                              ],
+                              color: Colors.black,
+                              letterSpacing: 10,
+                            ),
+                          ),
+                        ),
+                        minFontSize: 0,
+                        stepGranularity: 0.1,
+                        textAlign: TextAlign.left,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         )
