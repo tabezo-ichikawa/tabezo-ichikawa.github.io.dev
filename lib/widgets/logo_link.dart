@@ -19,13 +19,11 @@ class LogoLink extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: InkWell(
-        child: SizedBox.expand(
-          child: FittedBox(
-            fit: BoxFit.contain,
-            child: Icon(
-              icon,
-              size: logoSize,
-            ),
+        child: FittedBox(
+          fit: BoxFit.contain,
+          child: Icon(
+            icon,
+            size: logoSize,
           ),
         ),
         onTap: () async {
