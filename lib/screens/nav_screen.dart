@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tabezo_web/config/palette.dart';
 import 'package:tabezo_web/screens/about_screen.dart';
 import 'package:tabezo_web/screens/home_screen.dart';
 import 'package:tabezo_web/widgets/widgets.dart';
@@ -45,7 +46,7 @@ class _NavScreenState extends State<NavScreen> {
                       child: InkWell(
                         child: const Icon(
                           MdiIcons.menu,
-                          color: Colors.black,
+                          color: Palette.tabezoBlue,
                         ),
                         onTap: () => _scaffoldKey.currentState.openDrawer(),
                       ),
@@ -81,7 +82,7 @@ class _NavScreenState extends State<NavScreen> {
   Drawer _getDrawer(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Colors.yellow,
+        color: Palette.tabezoYellow,
         child: ListView(
           children: <Widget>[
             const SizedBox(
@@ -91,7 +92,12 @@ class _NavScreenState extends State<NavScreen> {
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  const Text('Home'),
+                  const Text(
+                    'Home',
+                    style: TextStyle(
+                      color: Palette.tabezoBlue,
+                    ),
+                  ),
                 ],
               ),
               onTap: () {
@@ -105,7 +111,12 @@ class _NavScreenState extends State<NavScreen> {
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  const Text('About'),
+                  const Text(
+                    'About',
+                    style: TextStyle(
+                      color: Palette.tabezoBlue,
+                    ),
+                  ),
                 ],
               ),
               onTap: () {
@@ -119,7 +130,12 @@ class _NavScreenState extends State<NavScreen> {
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  const Text('More info'),
+                  const Text(
+                    'More info',
+                    style: TextStyle(
+                      color: Palette.tabezoBlue,
+                    ),
+                  ),
                 ],
               ),
               onTap: () {

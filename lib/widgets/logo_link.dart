@@ -24,6 +24,7 @@ class LogoLink extends StatelessWidget {
           child: Icon(
             icon,
             size: logoSize,
+            color: logoColor,
           ),
         ),
         onTap: () async {

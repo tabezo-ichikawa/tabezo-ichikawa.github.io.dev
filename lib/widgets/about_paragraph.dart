@@ -12,6 +12,7 @@ class AboutParagraph extends StatelessWidget {
     return Container(
       //
       child: RichText(
+        textAlign: TextAlign.justify,
         text: TextSpan(
           children: <TextSpan>[
             TextSpan(

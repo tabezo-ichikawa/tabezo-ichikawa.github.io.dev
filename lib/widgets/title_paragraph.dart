@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:tabezo_web/config/palette.dart';
 
 class TitleParagraph extends StatelessWidget {
   @override
@@ -19,7 +20,7 @@ class TitleParagraph extends StatelessWidget {
               textStyle: const TextStyle(
                 fontWeight: FontWeight.bold,
                 letterSpacing: 10,
-                color: Colors.black,
+                color: Palette.tabezoBlue,
                 fontSize: 15,
               ),
             ),
@@ -31,7 +32,7 @@ class TitleParagraph extends StatelessWidget {
             style: GoogleFonts.fasterOne(
               textStyle: const TextStyle(
                 letterSpacing: 10,
-                color: Colors.black,
+                color: Palette.tabezoBlue,
                 fontSize: 40,
               ),
             ),

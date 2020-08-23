@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tabezo_web/config/palette.dart';
 import 'package:tabezo_web/widgets/widgets.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -89,130 +90,152 @@ class _HomeScreenDesktop extends StatelessWidget {
             padding: Responsive.isDesktop(context)
                 ? EdgeInsets.fromLTRB(sideAreaWidth, 140, sideAreaWidth, 0)
                 : EdgeInsets.fromLTRB(sideAreaWidth, 140, sideAreaWidth / 2, 0),
-            child: Container(
-              constraints: BoxConstraints(
-                maxHeight: screenSize.height - 140,
-                maxWidth: screenSize.width,
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    constraints: BoxConstraints(
-                      maxHeight: 30,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          child: LogoLink(
-                            logoSize: null,
-                            icon: MdiIcons.spotify,
-                            logoColor: Colors.black,
-                            url: null,
-                          ),
-                        ),
-                        Container(
-                          child: LogoLink(
-                            logoSize: null,
-                            icon: MdiIcons.apple,
-                            logoColor: Colors.black,
-                            url: null,
-                          ),
-                        ),
-                        Container(
-                          child: LogoLink(
-                            logoSize: null,
-                            icon: MdiIcons.instagram,
-                            logoColor: Colors.black,
-                            url: null,
-                          ),
-                        ),
-                        Container(
-                          child: LogoLink(
-                            logoSize: null,
-                            icon: MdiIcons.twitter,
-                            logoColor: Colors.black,
-                            url: null,
-                          ),
-                        ),
-                        Container(
-                          child: LogoLink(
-                            logoSize: null,
-                            icon: MdiIcons.youtube,
-                            logoColor: Colors.black,
-                            url: null,
-                          ),
-                        ),
-                        Container(
-                          child: LogoLink(
-                            logoSize: null,
-                            icon: MdiIcons.discord,
-                            logoColor: Colors.black,
-                            url: null,
-                          ),
-                        ),
-                        Container(
-                          child: LogoLink(
-                            logoSize: null,
-                            icon: MdiIcons.github,
-                            logoColor: Colors.black,
-                            url: null,
-                          ),
-                        ),
-                        Container(
-                          width: 30,
-                          height: 30,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    child: Expanded(
-                      child: AutoSizeText.rich(
-                        TextSpan(
-                          text:
-                              'We make music,\ndesign and code, de\nYarasete Itadaite Orimasu.',
-                          style: GoogleFonts.josefinSans(
-                            textStyle: TextStyle(
-                              fontSize: 64,
-                              fontWeight: FontWeight.bold,
-                              fontStyle: FontStyle.normal,
-                              shadows: [
-                                Shadow(
-                                    // bottomLeft
-                                    offset: Offset(
-                                        -shadowThickness, -shadowThickness),
-                                    color: Colors.white70),
-                                // Shadow(
-                                //     // bottomRight
-                                //     offset: Offset(
-                                //         shadowThickness, -shadowThickness),
-                                //     color: Colors.white),
-                                Shadow(
-                                    // topRight
-                                    offset: Offset(
-                                        shadowThickness, shadowThickness),
-                                    color: Colors.white70),
-                                // Shadow(
-                                //     // topLeft
-                                //     offset: Offset(
-                                //         -shadowThickness, shadowThickness),
-                                //     color: Colors.white),
-                              ],
-                              color: Colors.black,
-                              letterSpacing: 10,
+            child: Transform(
+              transform: Matrix4.rotationZ(-0.01),
+              alignment: FractionalOffset.center,
+              child: Container(
+                constraints: BoxConstraints(
+                  maxHeight: screenSize.height - 140,
+                  maxWidth: screenSize.width,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      constraints: BoxConstraints(
+                        maxHeight: 30,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            child: LogoLink(
+                              logoSize:
+                                  !Responsive.isMobile(context) ? null : 18,
+                              icon: MdiIcons.spotify,
+                              logoColor: Palette.tabezoBlue,
+                              url:
+                                  'https://open.spotify.com/artist/0kA6hiWjtnojSctZTgFAs2?si=zZj96x64Sq2f6w60mgL8_g',
                             ),
                           ),
-                        ),
-                        minFontSize: 0,
-                        stepGranularity: 0.1,
-                        textAlign: TextAlign.left,
+                          Container(
+                            child: LogoLink(
+                              logoSize:
+                                  !Responsive.isMobile(context) ? null : 18,
+                              icon: MdiIcons.apple,
+                              logoColor: Palette.tabezoBlue,
+                              url:
+                                  'https://music.apple.com/jp/artist/tabezo-ichikawa/1512798243',
+                            ),
+                          ),
+                          Container(
+                            child: LogoLink(
+                              logoSize:
+                                  !Responsive.isMobile(context) ? null : 18,
+                              icon: MdiIcons.instagram,
+                              logoColor: Palette.tabezoBlue,
+                              url: 'https://www.instagram.com/tabezo_ichikawa/',
+                            ),
+                          ),
+                          Container(
+                            child: LogoLink(
+                              logoSize:
+                                  !Responsive.isMobile(context) ? null : 18,
+                              icon: MdiIcons.twitter,
+                              logoColor: Palette.tabezoBlue,
+                              url: 'https://twitter.com/TabezoIchikawa',
+                            ),
+                          ),
+                          Container(
+                            child: LogoLink(
+                              logoSize:
+                                  !Responsive.isMobile(context) ? null : 18,
+                              icon: MdiIcons.youtube,
+                              logoColor: Palette.tabezoBlue,
+                              url:
+                                  'https://www.youtube.com/channel/UCFq3dShoeK4xZfqAffgY_IQ?view_as=subscriber',
+                            ),
+                          ),
+                          Container(
+                            child: LogoLink(
+                              logoSize:
+                                  !Responsive.isMobile(context) ? null : 18,
+                              icon: MdiIcons.discord,
+                              logoColor: Palette.tabezoBlue,
+                              url: 'https://discord.com/invite/Cn8sn7R',
+                            ),
+                          ),
+                          Container(
+                            child: LogoLink(
+                              logoSize:
+                                  !Responsive.isMobile(context) ? null : 18,
+                              icon: MdiIcons.github,
+                              logoColor: Palette.tabezoBlue,
+                              url: 'https://github.com/tabezo-ichikawa',
+                            ),
+                          ),
+                          Responsive.isDesktop(context)
+                              ? Container(
+                                  width: 30,
+                                  height: 30,
+                                )
+                              : Container(
+                                  width: 0,
+                                  height: 0,
+                                ),
+                        ],
                       ),
                     ),
-                  ),
-                ],
+                    Container(
+                      child: Expanded(
+                        child: AutoSizeText.rich(
+                          TextSpan(
+                            text:
+                                'We make music,\ndesign and code, de\nYarasete Itadaite Orimasu.',
+                            style: GoogleFonts.josefinSans(
+                              textStyle: TextStyle(
+                                fontSize: 72,
+                                fontWeight: FontWeight.bold,
+                                fontStyle: FontStyle.normal,
+                                shadows: [
+                                  Shadow(
+                                      // bottomLeft
+                                      offset: Offset(
+                                          -shadowThickness, -shadowThickness),
+                                      color: Palette.tabezoYellow),
+                                  Shadow(
+                                      // bottomRight
+                                      offset: Offset(
+                                          shadowThickness, -shadowThickness),
+                                      color: Palette.tabezoYellow),
+                                  Shadow(
+                                      // topRight
+                                      offset: Offset(
+                                          shadowThickness, shadowThickness),
+                                      color: Palette.tabezoYellow),
+                                  Shadow(
+                                      // topLeft
+                                      offset: Offset(
+                                          -shadowThickness, shadowThickness),
+                                      color: Palette.tabezoYellow),
+                                ],
+                                color: Palette.tabezoBlue,
+                                letterSpacing: 15,
+                              ),
+                            ),
+                          ),
+                          minFontSize: 0,
+                          stepGranularity: 0.1,
+                          textAlign: TextAlign.left,
+                          strutStyle: StrutStyle(
+                            height: 1.1,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
