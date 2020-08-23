@@ -66,6 +66,7 @@ class _HomeScreenDesktop extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
     final sideAreaWidth = screenSize.width / 6;
     final shadowThickness = 1.5;
+    final orientation = MediaQuery.of(context).orientation;
 
     return Stack(
       children: <Widget>[
@@ -92,7 +93,7 @@ class _HomeScreenDesktop extends StatelessWidget {
                 : EdgeInsets.fromLTRB(sideAreaWidth, 140, sideAreaWidth / 2, 0),
             child: Container(
               constraints: BoxConstraints(
-                maxHeight: screenSize.height - 140,
+                maxHeight: screenSize.height / 2 - 140,
                 maxWidth: screenSize.width,
               ),
               child: Column(
@@ -109,8 +110,7 @@ class _HomeScreenDesktop extends StatelessWidget {
                       children: [
                         Container(
                           child: LogoLink(
-                            logoSize:
-                                !Responsive.isMobile(context) ? null : 18,
+                            logoSize: !Responsive.isMobile(context) ? null : 18,
                             icon: MdiIcons.spotify,
                             logoColor: Palette.tabezoBlue,
                             url:
@@ -119,8 +119,7 @@ class _HomeScreenDesktop extends StatelessWidget {
                         ),
                         Container(
                           child: LogoLink(
-                            logoSize:
-                                !Responsive.isMobile(context) ? null : 18,
+                            logoSize: !Responsive.isMobile(context) ? null : 18,
                             icon: MdiIcons.apple,
                             logoColor: Palette.tabezoBlue,
                             url:
@@ -129,8 +128,7 @@ class _HomeScreenDesktop extends StatelessWidget {
                         ),
                         Container(
                           child: LogoLink(
-                            logoSize:
-                                !Responsive.isMobile(context) ? null : 18,
+                            logoSize: !Responsive.isMobile(context) ? null : 18,
                             icon: MdiIcons.instagram,
                             logoColor: Palette.tabezoBlue,
                             url: 'https://www.instagram.com/tabezo_ichikawa/',
@@ -138,8 +136,7 @@ class _HomeScreenDesktop extends StatelessWidget {
                         ),
                         Container(
                           child: LogoLink(
-                            logoSize:
-                                !Responsive.isMobile(context) ? null : 18,
+                            logoSize: !Responsive.isMobile(context) ? null : 18,
                             icon: MdiIcons.twitter,
                             logoColor: Palette.tabezoBlue,
                             url: 'https://twitter.com/TabezoIchikawa',
@@ -147,8 +144,7 @@ class _HomeScreenDesktop extends StatelessWidget {
                         ),
                         Container(
                           child: LogoLink(
-                            logoSize:
-                                !Responsive.isMobile(context) ? null : 18,
+                            logoSize: !Responsive.isMobile(context) ? null : 18,
                             icon: MdiIcons.youtube,
                             logoColor: Palette.tabezoBlue,
                             url:
@@ -157,8 +153,7 @@ class _HomeScreenDesktop extends StatelessWidget {
                         ),
                         Container(
                           child: LogoLink(
-                            logoSize:
-                                !Responsive.isMobile(context) ? null : 18,
+                            logoSize: !Responsive.isMobile(context) ? null : 18,
                             icon: MdiIcons.discord,
                             logoColor: Palette.tabezoBlue,
                             url: 'https://discord.com/invite/Cn8sn7R',
@@ -166,8 +161,7 @@ class _HomeScreenDesktop extends StatelessWidget {
                         ),
                         Container(
                           child: LogoLink(
-                            logoSize:
-                                !Responsive.isMobile(context) ? null : 18,
+                            logoSize: !Responsive.isMobile(context) ? null : 18,
                             icon: MdiIcons.github,
                             logoColor: Palette.tabezoBlue,
                             url: 'https://github.com/tabezo-ichikawa',
@@ -189,20 +183,23 @@ class _HomeScreenDesktop extends StatelessWidget {
                     child: Expanded(
                       child: AutoSizeText.rich(
                         TextSpan(
-                          text:
-                              'We make music,\ndesign and code, de\nYarasete Itadaite Orimasu.',
+                          text: Responsive.isDesktop(context)
+                              ? 'We make music, design and code, de\nYarasete Itadaite Orimasu.'
+                              : 'We make music, design and code, de Yarasete Itadaite Orimasu.',
                           style: GoogleFonts.josefinSans(
                             textStyle: TextStyle(
                               fontSize: 72,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: !Responsive.isMobile(context)
+                                  ? FontWeight.bold
+                                  : FontWeight.w100,
                               fontStyle: FontStyle.normal,
                               color: Palette.tabezoBlue,
-                              letterSpacing: 15,
+                              letterSpacing:
+                                  !Responsive.isMobile(context) ? 15 : 1,
                             ),
                           ),
                         ),
                         minFontSize: 0,
-                        maxLines: 3,
                         stepGranularity: 0.1,
                         textAlign: TextAlign.left,
                         strutStyle: StrutStyle(
