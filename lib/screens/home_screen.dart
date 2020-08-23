@@ -101,7 +101,9 @@ class _HomeScreenDesktop extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    padding: EdgeInsets.only(bottom: 30),
+                    padding: !Responsive.isMobile(context)
+                        ? EdgeInsets.only(bottom: 30)
+                        : EdgeInsets.only(bottom: 0),
                     constraints: BoxConstraints(
                       maxHeight: 60,
                     ),
@@ -184,14 +186,14 @@ class _HomeScreenDesktop extends StatelessWidget {
                       child: AutoSizeText.rich(
                         TextSpan(
                           text: Responsive.isDesktop(context)
-                              ? 'We make music, design and code, de\nYarasete Itadaite Orimasu.'
+                              ? 'We make music, \ndesign and code, de\nYarasete Itadaite Orimasu.'
                               : 'We make music, design and code, de Yarasete Itadaite Orimasu.',
                           style: GoogleFonts.josefinSans(
                             textStyle: TextStyle(
                               fontSize: 72,
                               fontWeight: !Responsive.isMobile(context)
                                   ? FontWeight.bold
-                                  : FontWeight.w100,
+                                  : FontWeight.normal,
                               fontStyle: FontStyle.normal,
                               color: Palette.tabezoBlue,
                               letterSpacing:

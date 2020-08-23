@@ -60,13 +60,13 @@ class Paragraphs {
           style: Theme.of(context).textTheme.bodyText1.merge(
                 const TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: Colors.lightBlue,
+                  decoration: TextDecoration.underline,
                 ),
               ),
           recognizer: TapGestureRecognizer()
             ..onTap = () async {
-              if (await canLaunch('https://www.google.com/')) {
-                await launch('https://www.google.com/');
+              if (await canLaunch('https://discord.com/invite/Cn8sn7R')) {
+                await launch('https://discord.com/invite/Cn8sn7R');
               } else {
                 print('url launch failed');
               }

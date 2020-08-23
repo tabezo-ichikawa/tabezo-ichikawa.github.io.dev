@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tabezo_web/config/palette.dart';
 import 'screens/screens.dart';
 
 void main() {
@@ -43,8 +44,8 @@ class MyApp extends StatelessWidget {
           overline: GoogleFonts.roboto(
               fontSize: 10, fontWeight: FontWeight.w400, letterSpacing: 1.5),
         ).apply(
-          bodyColor: Colors.black87,
-          displayColor: Colors.black87,
+          bodyColor: Palette.tabezoPurple,
+          displayColor: Palette.tabezoPurple,
         ),
       ),
       home: NavScreen(),
