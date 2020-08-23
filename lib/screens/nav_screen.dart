@@ -81,7 +81,7 @@ class _NavScreenState extends State<NavScreen> {
   // TODO: mapかなにかでlistの数だけdrawerのメニューを出すようにできる
   Drawer _getDrawer(BuildContext context) {
     return Drawer(
-      child: Container(
+      child: Material(
         color: Palette.tabezoYellow,
         child: ListView(
           children: <Widget>[
@@ -130,7 +130,7 @@ class _NavScreenState extends State<NavScreen> {
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  const Text(
+                  Text(
                     'More info',
                     style: TextStyle(
                       color: Palette.tabezoBlue,

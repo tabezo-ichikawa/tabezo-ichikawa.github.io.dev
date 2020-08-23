@@ -102,8 +102,8 @@ class _HomeScreenDesktop extends StatelessWidget {
                 children: [
                   Container(
                     padding: !Responsive.isMobile(context)
-                        ? EdgeInsets.only(bottom: 30)
-                        : EdgeInsets.only(bottom: 0),
+                        ? EdgeInsets.only(bottom: 10)
+                        : EdgeInsets.only(bottom: 10),
                     constraints: BoxConstraints(
                       maxHeight: 60,
                     ),
