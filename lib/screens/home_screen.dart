@@ -70,11 +70,6 @@ class _HomeScreenDesktop extends StatelessWidget {
 
     return Stack(
       children: <Widget>[
-        // TODO:
-        // Video上ではマウスカーソルのホバーエフェクトが動作しないので、現状では背景は静止画しか使えない
-        // https://github.com/flutter/flutter/issues/62306
-        //BackGroundVideo(),
-
         // Splashエフェクトを見せるためにはInk.imageで画像を描画する必要がある
         Ink.image(
           image: const AssetImage(
@@ -84,6 +79,7 @@ class _HomeScreenDesktop extends StatelessWidget {
 
         // logo links
         SingleChildScrollView(
+          controller: scrollController,
           physics: const BouncingScrollPhysics(
             parent: AlwaysScrollableScrollPhysics(),
           ),
