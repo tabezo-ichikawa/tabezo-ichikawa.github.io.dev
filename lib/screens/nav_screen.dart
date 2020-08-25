@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:tabezo_web/config/palette.dart';
-import 'package:tabezo_web/screens/about_screen.dart';
-import 'package:tabezo_web/screens/home_screen.dart';
-import 'package:tabezo_web/widgets/widgets.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:tabezo_web/config/palette.dart';
+import 'package:tabezo_web/screens/screens.dart';
+import 'package:tabezo_web/widgets/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 
 class NavScreen extends StatefulWidget {
   @override

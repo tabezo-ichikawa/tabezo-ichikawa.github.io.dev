@@ -1,11 +1,11 @@
-import 'dart:ui';
+
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:tabezo_web/config/palette.dart';
 import 'package:tabezo_web/widgets/widgets.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -27,29 +27,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
-        body: Responsive(
-          mobile:
-              //_HomeScreenMobile(scrollController: _trackingScrollController),
-              _HomeScreenDesktop(scrollController: _trackingScrollController),
-          desktop:
-              _HomeScreenDesktop(scrollController: _trackingScrollController),
-        ),
+        body: _HomeScreenDesktop(scrollController: _trackingScrollController),
       ),
     );
-  }
-}
-
-class _HomeScreenMobile extends StatelessWidget {
-  final TrackingScrollController scrollController;
-
-  const _HomeScreenMobile({
-    Key key,
-    @required this.scrollController,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
 

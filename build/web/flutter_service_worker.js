@@ -5,16 +5,16 @@ const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "assets/AssetManifest.json": "5b644723282bc88e9e3c0127300a110e",
 "assets/assets/images/IMG_5277.JPG": "0860bea12f302bd000aaabe9e7a2f9de",
-"assets/FontManifest.json": "40849f3e1b3bb567a55b7118d9b4dadf",
-"assets/fonts/MaterialIcons-Regular.ttf": "56d3ffdef7a25659eab6a68a3fbfaf16",
-"assets/NOTICES": "8d23252edc18877b656a1e81ea5f0c36",
+"assets/FontManifest.json": "cf3c681641169319e61b61bd0277378f",
+"assets/fonts/MaterialIcons-Regular.otf": "a68d2a28c526b3b070aefca4bac93d25",
+"assets/NOTICES": "279ab5b3b3abe4682801570edddce014",
 "assets/packages/material_design_icons_flutter/lib/fonts/materialdesignicons-webfont.ttf": "6a2ddad1092a0a1c326b6d0e738e682b",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "index.html": "1695018a6ddefaed6c617bfa00019b3e",
 "/": "1695018a6ddefaed6c617bfa00019b3e",
-"main.dart.js": "f8ef22cac7bac81fb7148f87140413c6",
+"main.dart.js": "d86b34915e229087955c317849bde8d9",
 "manifest.json": "4500a9ad4595f1bd54be76bc2d6e41e2"
 };
 
@@ -32,8 +32,8 @@ const CORE = [
 self.addEventListener("install", (event) => {
   return event.waitUntil(
     caches.open(TEMP).then((cache) => {
-      // Provide a no-cache param to ensure the latest version is downloaded.
-      return cache.addAll(CORE.map((value) => new Request(value, {'cache': 'no-cache'})));
+      // Provide a 'reload' param to ensure the latest version is downloaded.
+      return cache.addAll(CORE.map((value) => new Request(value, {'cache': 'reload'})));
     })
   );
 });
@@ -116,7 +116,7 @@ self.addEventListener("fetch", (event) => {
         // Either respond with the cached resource, or perform a fetch and
         // lazily populate the cache. Ensure the resources are not cached
         // by the browser for longer than the service worker expects.
-        var modifiedRequest = new Request(event.request, {'cache': 'no-cache'});
+        var modifiedRequest = new Request(event.request, {'cache': 'reload'});
         return response || fetch(modifiedRequest).then((response) => {
           cache.put(event.request, response.clone());
           return response;

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tabezo_web/widgets/about_paragraph.dart';
-import 'package:tabezo_web/widgets/responsive.dart';
+import 'package:tabezo_web/widgets/widgets.dart';
 
 class AboutScreen extends StatefulWidget {
   @override
