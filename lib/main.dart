@@ -44,11 +44,15 @@ class MyApp extends StatelessWidget {
           overline: GoogleFonts.roboto(
               fontSize: 10, fontWeight: FontWeight.w400, letterSpacing: 1.5),
         ).apply(
-          bodyColor: Palette.tabezoPurple,
-          displayColor: Palette.tabezoPurple,
+          bodyColor: Palette.tabezoBlue,
+          displayColor: Palette.tabezoBlue,
         ),
       ),
-      home: NavScreen(),
+      home: HomeScreen(),
+      routes: {
+        '/home': (BuildContext context) => HomeScreen(),
+        '/about': (BuildContext context) => AboutScreen(),
+      },
     );
   }
 }

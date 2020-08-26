@@ -5,7 +5,6 @@ import 'package:tabezo_web/screens/screens.dart';
 import 'package:tabezo_web/widgets/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-
 class NavScreen extends StatefulWidget {
   @override
   _NavScreenState createState() => _NavScreenState();
@@ -25,55 +24,46 @@ class _NavScreenState extends State<NavScreen> {
     final screenSize = MediaQuery.of(context).size;
     final sideAreaWidth = screenSize.width / 6;
 
-    return DefaultTabController(
-      //FIXME: lengthはページの数で、drawerのメニューの数に対応させなければならない
-      length: _screens.length,
-      child: Stack(
-        children: [
-          Scaffold(
-            extendBodyBehindAppBar: true,
-            key: _scaffoldKey,
-            drawer: _getDrawer(context),
-            appBar: PreferredSize(
-              preferredSize: Size(screenSize.width, 140),
-              child: Container(
-                child: Row(
-                  children: [
-                    Container(
-                      width: sideAreaWidth,
-                      padding:
-                          EdgeInsets.symmetric(horizontal: sideAreaWidth / 3),
-                      child: InkWell(
-                        child: const Icon(
-                          MdiIcons.menu,
-                          color: Palette.tabezoBlue,
-                        ),
-                        onTap: () => _scaffoldKey.currentState.openDrawer(),
-                      ),
-                    ),
-                    // TitleParagraph()内のAuto size textがConstraintsがないと働かないので、
-                    // Expandedする
-                    Expanded(
-                      child: Container(
-                        child: TitleParagraph(),
-                      ),
-                    ),
-                    // 位置調整
-                    SizedBox(
-                      width: sideAreaWidth / 6,
-                    ),
-                  ],
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      key: _scaffoldKey,
+      drawer: _getDrawer(context),
+      appBar: PreferredSize(
+        preferredSize: Size(screenSize.width, 140),
+        child: Container(
+          child: Row(
+            children: [
+              Container(
+                width: sideAreaWidth,
+                padding: EdgeInsets.symmetric(horizontal: sideAreaWidth / 3),
+                child: InkWell(
+                  child: const Icon(
+                    MdiIcons.menu,
+                    color: Palette.tabezoBlue,
+                  ),
+                  onTap: () => _scaffoldKey.currentState.openDrawer(),
                 ),
-                color: Colors.transparent,
               ),
-            ),
-            body: IndexedStack(
-              //TODO: 複数ページ扱うとき_selectedIndexをちゃんと管理しないといけない
-              index: _selectedIndex,
-              children: _screens,
-            ),
+              // TitleParagraph()内のAuto size textがConstraintsがないと働かないので、
+              // Expandedする
+              Expanded(
+                child: Container(
+                  child: TitleParagraph(),
+                ),
+              ),
+              // 位置調整
+              SizedBox(
+                width: sideAreaWidth / 6,
+              ),
+            ],
           ),
-        ],
+          color: Colors.transparent,
+        ),
+      ),
+      body: IndexedStack(
+        //TODO: 複数ページ扱うとき_selectedIndexをちゃんと管理しないといけない
+        index: _selectedIndex,
+        children: _screens,
       ),
     );
   }
@@ -121,9 +111,10 @@ class _NavScreenState extends State<NavScreen> {
               ),
               onTap: () {
                 Navigator.pop(context);
-                setState(
-                  () => _selectedIndex = 1,
-                );
+                Navigator.pushNamed(context, '/about');
+                // setState(
+                //   () => _selectedIndex = 1,
+                // );
               },
             ),
             ListTile(

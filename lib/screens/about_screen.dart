@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:tabezo_web/config/palette.dart';
 import 'package:tabezo_web/widgets/widgets.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutScreen extends StatefulWidget {
   @override
@@ -7,6 +10,158 @@ class AboutScreen extends StatefulWidget {
 }
 
 class _AboutScreenState extends State<AboutScreen> {
+  final TrackingScrollController _trackingScrollController =
+      TrackingScrollController();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void dispose() {
+    _trackingScrollController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+    final sideAreaWidth = screenSize.width / 6;
+
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        extendBodyBehindAppBar: true,
+        key: _scaffoldKey,
+        drawer: _getDrawer(context),
+        appBar: PreferredSize(
+          preferredSize: Size(screenSize.width, 140),
+          child: Container(
+            child: Row(
+              children: [
+                Container(
+                  width: sideAreaWidth,
+                  padding: EdgeInsets.symmetric(horizontal: sideAreaWidth / 3),
+                  child: InkWell(
+                    child: const Icon(
+                      MdiIcons.menu,
+                      color: Palette.tabezoBlue,
+                    ),
+                    onTap: () => _scaffoldKey.currentState.openDrawer(),
+                  ),
+                ),
+                // TitleParagraph()内のAuto size textがConstraintsがないと働かないので、
+                // Expandedする
+                Expanded(
+                  child: Container(
+                    child: TitleParagraph(),
+                  ),
+                ),
+                // 位置調整
+                SizedBox(
+                  width: sideAreaWidth / 6,
+                ),
+              ],
+            ),
+            color: Colors.transparent,
+          ),
+        ),
+        body: _AboutScreen(scrollController: _trackingScrollController),
+      ),
+    );
+  }
+
+  Drawer _getDrawer(BuildContext context) {
+    return Drawer(
+      child: Material(
+        color: Palette.tabezoYellow,
+        child: ListView(
+          children: <Widget>[
+            const SizedBox(
+              height: 100,
+            ),
+            ListTile(
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  const Text(
+                    'Home',
+                    style: TextStyle(
+                      color: Palette.tabezoBlue,
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/home');
+              },
+            ),
+            ListTile(
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  const Text(
+                    'About',
+                    style: TextStyle(
+                      color: Palette.tabezoBlue,
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/about');
+              },
+            ),
+            ListTile(
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    'More info',
+                    style: TextStyle(
+                      color: Palette.tabezoBlue,
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                Navigator.pop(context);
+                showAboutDialog(
+                  context: context,
+                  applicationLegalese:
+                      'Visit our Github for the source code of this page.',
+                  children: [
+                    InkWell(
+                      child: const Icon(
+                        MdiIcons.github,
+                        size: 40,
+                      ),
+                      onTap: () async {
+                        if (await canLaunch(
+                            'https://github.com/tabezo-ichikawa/tabezo-ichikawa.github.io.dev')) {
+                          await launch(
+                              'https://github.com/tabezo-ichikawa/tabezo-ichikawa.github.io.dev');
+                        }
+                      },
+                    ),
+                  ],
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _AboutScreen extends StatelessWidget {
+  final TrackingScrollController scrollController;
+
+  const _AboutScreen({
+    Key key,
+    @required this.scrollController,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -16,14 +171,14 @@ class _AboutScreenState extends State<AboutScreen> {
       children: <Widget>[
         // Background image
         // Splashエフェクトを見せるためにはInk.imageで画像を描画する必要がある
-        Ink.image(
-          image: const AssetImage(
-              'assets/images/IMG_5277.JPG'), // full path was needed
-          fit: BoxFit.cover,
-        ),
+        // Ink.image(
+        //   image: const AssetImage(
+        //       'assets/images/IMG_5277.JPG'), // full path was needed
+        //   fit: BoxFit.cover,
+        // ),
 
         Ink(
-          color: Colors.white70,
+          color: Palette.tabezoYellow,
         ),
 
         // Profile
@@ -37,6 +192,7 @@ class _AboutScreenState extends State<AboutScreen> {
           child: Center(
             heightFactor: 1.3,
             child: SingleChildScrollView(
+              controller: scrollController,
               physics: const BouncingScrollPhysics(
                 parent: AlwaysScrollableScrollPhysics(),
               ),
