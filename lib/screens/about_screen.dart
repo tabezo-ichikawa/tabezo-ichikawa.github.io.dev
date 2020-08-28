@@ -31,37 +31,10 @@ class _AboutScreenState extends State<AboutScreen> {
         extendBodyBehindAppBar: true,
         key: _scaffoldKey,
         drawer: _getDrawer(context),
-        appBar: PreferredSize(
+        appBar: MyAppBar(
           preferredSize: Size(screenSize.width, 140),
-          child: Container(
-            child: Row(
-              children: [
-                Container(
-                  width: sideAreaWidth,
-                  padding: EdgeInsets.symmetric(horizontal: sideAreaWidth / 3),
-                  child: InkWell(
-                    child: const Icon(
-                      MdiIcons.menu,
-                      color: Palette.tabezoBlue,
-                    ),
-                    onTap: () => _scaffoldKey.currentState.openDrawer(),
-                  ),
-                ),
-                // TitleParagraph()内のAuto size textがConstraintsがないと働かないので、
-                // Expandedする
-                Expanded(
-                  child: Container(
-                    child: TitleParagraph(),
-                  ),
-                ),
-                // 位置調整
-                SizedBox(
-                  width: sideAreaWidth / 6,
-                ),
-              ],
-            ),
-            color: Colors.transparent,
-          ),
+          scaffoldKey: _scaffoldKey,
+          sideAreaWidth: sideAreaWidth,
         ),
         body: _AboutScreen(scrollController: _trackingScrollController),
       ),

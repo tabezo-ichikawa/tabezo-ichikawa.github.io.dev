@@ -22,13 +22,13 @@ class MyApp extends StatelessWidget {
           headline2: GoogleFonts.josefinSans(
               fontSize: 77, fontWeight: FontWeight.w300, letterSpacing: -0.5),
           headline3: GoogleFonts.josefinSans(
-              fontSize: 61, fontWeight: FontWeight.w400),
+              fontSize: 61, fontWeight: FontWeight.bold),
           headline4: GoogleFonts.josefinSans(
-              fontSize: 43, fontWeight: FontWeight.w400, letterSpacing: 0.25),
+              fontSize: 43, fontWeight: FontWeight.bold, letterSpacing: 0.25),
           headline5: GoogleFonts.josefinSans(
-              fontSize: 31, fontWeight: FontWeight.w400),
+              fontSize: 31, fontWeight: FontWeight.bold),
           headline6: GoogleFonts.josefinSans(
-              fontSize: 26, fontWeight: FontWeight.w500, letterSpacing: 0.15),
+              fontSize: 26, fontWeight: FontWeight.bold, letterSpacing: 0.15),
           subtitle1: GoogleFonts.josefinSans(
               fontSize: 20, fontWeight: FontWeight.w400, letterSpacing: 0.15),
           subtitle2: GoogleFonts.josefinSans(
