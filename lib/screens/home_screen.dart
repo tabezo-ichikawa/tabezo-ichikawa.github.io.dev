@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
     waitForSomeMoment();
   }
 
-  void waitForSomeMoment() async {
+  Future<void> waitForSomeMoment() async {
     await Future.delayed(
       Duration(milliseconds: 1000),
       () {
@@ -80,6 +80,7 @@ class _HomeScreenDesktop extends StatelessWidget {
           image:
               const AssetImage('assets/IMG_5277.JPG'), // full path was needed
           fit: BoxFit.cover,
+          alignment: Alignment(0, -0.1),
         ),
 
         // logo links
@@ -103,7 +104,7 @@ class _HomeScreenDesktop extends StatelessWidget {
                 children: [
                   Container(
                     padding: !Responsive.isMobile(context)
-                        ? EdgeInsets.only(bottom: 10)
+                        ? EdgeInsets.only(bottom: 30)
                         : EdgeInsets.only(bottom: 10),
                     constraints: BoxConstraints(
                       maxHeight: 60,
@@ -195,7 +196,7 @@ class _HomeScreenDesktop extends StatelessWidget {
                               fontSize: 69,
                               fontWeight: !Responsive.isMobile(context)
                                   ? FontWeight.bold
-                                  : FontWeight.w400,
+                                  : FontWeight.bold,
                               fontStyle: FontStyle.italic,
                               color: Palette.tabezoBlue,
                               letterSpacing:

@@ -7,6 +7,7 @@ import 'package:tabezo_web/config/palette.dart';
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double sideAreaWidth;
   final GlobalKey<ScaffoldState> scaffoldKey;
+  @override
   final Size preferredSize;
 
   const MyAppBar({

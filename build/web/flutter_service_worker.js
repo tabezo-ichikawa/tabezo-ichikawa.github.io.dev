@@ -21,14 +21,14 @@ const RESOURCES = {
 "assets/google_fonts/JosefinSans-SemiBoldItalic.ttf": "dbdb2755b1d107b4ea14cd5dc4674a47",
 "assets/google_fonts/JosefinSans-Thin.ttf": "8f1a5916c7986af420490768a218375a",
 "assets/google_fonts/JosefinSans-ThinItalic.ttf": "abac76c2ae47bd550b183ec45cf5fd8a",
-"assets/NOTICES": "279ab5b3b3abe4682801570edddce014",
+"assets/NOTICES": "6120e104cb2e61eba9a3aca330bb2da8",
 "assets/packages/material_design_icons_flutter/lib/fonts/materialdesignicons-webfont.ttf": "6a2ddad1092a0a1c326b6d0e738e682b",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "index.html": "1695018a6ddefaed6c617bfa00019b3e",
 "/": "1695018a6ddefaed6c617bfa00019b3e",
-"main.dart.js": "5cc5268272099c7656f95ffa6be560bc",
+"main.dart.js": "baef8740c8058653eb885cf3ee8c27a5",
 "manifest.json": "4500a9ad4595f1bd54be76bc2d6e41e2"
 };
 
