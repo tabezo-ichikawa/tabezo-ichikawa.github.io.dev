@@ -166,32 +166,29 @@ class _HomeScreenDesktop extends StatelessWidget {
                     ),
                   ),
                   Container(
+                    //decoration: BoxDecoration(color: Colors.red,),
                     child: Expanded(
-                      child: FittedBox(
-                        fit: BoxFit.contain,
-                        child: RichText(
-                          text: TextSpan(
-                            text: true//Responsive.isDesktop(context)
-                                ? 'We make music, \ndesign and code, de\nYarasete Itadaite Orimasu.'
-                                : 'We make music, design and code, de Yarasete Itadaite Orimasu.',
-                            style: GoogleFonts.josefinSans(
-                              textStyle: TextStyle(
-                                fontSize: 72,
-                                fontWeight: !Responsive.isMobile(context)
-                                    ? FontWeight.bold
-                                    : FontWeight.bold,
-                                fontStyle: FontStyle.normal,
-                                color: Palette.tabezoBlue,
-                                letterSpacing:
-                                    !Responsive.isMobile(context) ? 15 : 15,
-                              ),
+                      child: AutoSizeText.rich(
+                        TextSpan(
+                          text: Responsive.isDesktop(context)
+                              ? 'We make music, \ndesign and code, de\nYarasete Itadaite Orimasu.'
+                              : 'We make music, design and code, de Yarasete Itadaite Orimasu.',
+                          style: GoogleFonts.josefinSans(
+                            textStyle: TextStyle(
+                              fontSize: 72,
+                              fontWeight: !Responsive.isMobile(context)
+                                  ? FontWeight.bold
+                                  : FontWeight.bold,
+                              fontStyle: FontStyle.italic,
+                              color: Palette.tabezoBlue,
+                              letterSpacing:
+                                  !Responsive.isMobile(context) ? 15 : 15,
                             ),
                           ),
-                          textAlign: TextAlign.left,
-                          strutStyle: StrutStyle(
-                            height: 1.1,
-                          ),
                         ),
+                        minFontSize: 0,
+                        stepGranularity: 0.1,
+                        textAlign: TextAlign.left,
                       ),
                     ),
                   ),

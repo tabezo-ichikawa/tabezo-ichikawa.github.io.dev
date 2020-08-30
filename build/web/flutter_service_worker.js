@@ -3,10 +3,24 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "de7016db88c3ef614ff60dfee34a6b83",
+  "assets/AssetManifest.json": "d1830b4d02bad469beb7ad27cfa5beb4",
 "assets/assets/IMG_5277.JPG": "0860bea12f302bd000aaabe9e7a2f9de",
 "assets/FontManifest.json": "cf3c681641169319e61b61bd0277378f",
 "assets/fonts/MaterialIcons-Regular.otf": "a68d2a28c526b3b070aefca4bac93d25",
+"assets/google_fonts/JosefinSans-Bold.ttf": "9ac2a60828c8f6e627f4f628899398f0",
+"assets/google_fonts/JosefinSans-BoldItalic.ttf": "b4436aa971b24be8f7823dbb18ea6fe5",
+"assets/google_fonts/JosefinSans-ExtraLight.ttf": "b416cdfefb8773398d7bde7095d7b48d",
+"assets/google_fonts/JosefinSans-ExtraLightItalic.ttf": "1feb71a31cb5136d62fa277568a2cfde",
+"assets/google_fonts/JosefinSans-Italic.ttf": "be73b06756c9cb723d17ece91228a008",
+"assets/google_fonts/JosefinSans-Light.ttf": "feb0ce986e5e893281a1f05b549a7db9",
+"assets/google_fonts/JosefinSans-LightItalic.ttf": "075ac7a067937bf14714771a7d3412f6",
+"assets/google_fonts/JosefinSans-Medium.ttf": "f03e35cea2a49996d4e149a2b82cf987",
+"assets/google_fonts/JosefinSans-MediumItalic.ttf": "a727e17c6b49b78755f14f05d68e2462",
+"assets/google_fonts/JosefinSans-Regular.ttf": "6762afeccd02d16a80409b78fb85251c",
+"assets/google_fonts/JosefinSans-SemiBold.ttf": "22108cbbdb8b3ab5b505fdedcd334efa",
+"assets/google_fonts/JosefinSans-SemiBoldItalic.ttf": "dbdb2755b1d107b4ea14cd5dc4674a47",
+"assets/google_fonts/JosefinSans-Thin.ttf": "8f1a5916c7986af420490768a218375a",
+"assets/google_fonts/JosefinSans-ThinItalic.ttf": "abac76c2ae47bd550b183ec45cf5fd8a",
 "assets/NOTICES": "279ab5b3b3abe4682801570edddce014",
 "assets/packages/material_design_icons_flutter/lib/fonts/materialdesignicons-webfont.ttf": "6a2ddad1092a0a1c326b6d0e738e682b",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
@@ -14,7 +28,7 @@ const RESOURCES = {
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "index.html": "1695018a6ddefaed6c617bfa00019b3e",
 "/": "1695018a6ddefaed6c617bfa00019b3e",
-"main.dart.js": "acacdd576496935a6978873501911a79",
+"main.dart.js": "07c70b63119ef2b3e0c2daf4f104ce4e",
 "manifest.json": "4500a9ad4595f1bd54be76bc2d6e41e2"
 };
 
