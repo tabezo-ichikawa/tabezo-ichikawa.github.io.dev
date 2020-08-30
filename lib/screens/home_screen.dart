@@ -15,6 +15,23 @@ class _HomeScreenState extends State<HomeScreen> {
       TrackingScrollController();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  // FIXME: autosizetextがgoogle fontを読み込む前のデフォルトフォントに対して働いちゃう問題に対するハック
+  // 1秒後にwidgtをリロードする
+  @override
+  void initState() {
+    super.initState();
+    waitForSomeMoment();
+  }
+
+  void waitForSomeMoment() async {
+    await Future.delayed(
+      Duration(milliseconds: 1000),
+      () {
+        setState(() {});
+      },
+    );
+  }
+
   @override
   void dispose() {
     _trackingScrollController.dispose();
@@ -73,7 +90,7 @@ class _HomeScreenDesktop extends StatelessWidget {
           ),
           child: Padding(
             padding: Responsive.isDesktop(context)
-                ? EdgeInsets.fromLTRB(sideAreaWidth, 140, sideAreaWidth, 0)
+                ? EdgeInsets.fromLTRB(sideAreaWidth, 140, sideAreaWidth / 2, 0)
                 : EdgeInsets.fromLTRB(sideAreaWidth, 140, sideAreaWidth / 2, 0),
             child: Container(
               constraints: BoxConstraints(
@@ -175,14 +192,14 @@ class _HomeScreenDesktop extends StatelessWidget {
                               : 'We make music, design and code, de Yarasete Itadaite Orimasu.',
                           style: GoogleFonts.josefinSans(
                             textStyle: TextStyle(
-                              fontSize: 72,
+                              fontSize: 69,
                               fontWeight: !Responsive.isMobile(context)
                                   ? FontWeight.bold
-                                  : FontWeight.bold,
+                                  : FontWeight.w400,
                               fontStyle: FontStyle.italic,
                               color: Palette.tabezoBlue,
                               letterSpacing:
-                                  !Responsive.isMobile(context) ? 15 : 15,
+                                  !Responsive.isMobile(context) ? 15 : 1,
                             ),
                           ),
                         ),

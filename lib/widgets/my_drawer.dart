@@ -64,8 +64,6 @@ class MyDrawer extends StatelessWidget {
                 Navigator.pop(context);
                 showAboutDialog(
                   context: context,
-                  applicationLegalese:
-                      'Visit our Github for the source code of this page.',
                   children: [
                     InkWell(
                       child: const Icon(
