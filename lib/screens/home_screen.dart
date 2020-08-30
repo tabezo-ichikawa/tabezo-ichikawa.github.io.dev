@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:tabezo_web/config/palette.dart';
 import 'package:tabezo_web/widgets/widgets.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -61,8 +60,8 @@ class _HomeScreenDesktop extends StatelessWidget {
       children: <Widget>[
         // Splashエフェクトを見せるためにはInk.imageで画像を描画する必要がある
         Ink.image(
-          image: const AssetImage(
-              'assets/images/IMG_5277.JPG'), // full path was needed
+          image:
+              const AssetImage('assets/IMG_5277.JPG'), // full path was needed
           fit: BoxFit.cover,
         ),
 
@@ -168,29 +167,30 @@ class _HomeScreenDesktop extends StatelessWidget {
                   ),
                   Container(
                     child: Expanded(
-                      child: AutoSizeText.rich(
-                        TextSpan(
-                          text: Responsive.isDesktop(context)
-                              ? 'We make music, \ndesign and code, de\nYarasete Itadaite Orimasu.'
-                              : 'We make music, design and code, de Yarasete Itadaite Orimasu.',
-                          style: GoogleFonts.josefinSans(
-                            textStyle: TextStyle(
-                              fontSize: 72,
-                              fontWeight: !Responsive.isMobile(context)
-                                  ? FontWeight.bold
-                                  : FontWeight.normal,
-                              fontStyle: FontStyle.normal,
-                              color: Palette.tabezoBlue,
-                              letterSpacing:
-                                  !Responsive.isMobile(context) ? 15 : 1,
+                      child: FittedBox(
+                        fit: BoxFit.contain,
+                        child: RichText(
+                          text: TextSpan(
+                            text: true//Responsive.isDesktop(context)
+                                ? 'We make music, \ndesign and code, de\nYarasete Itadaite Orimasu.'
+                                : 'We make music, design and code, de Yarasete Itadaite Orimasu.',
+                            style: GoogleFonts.josefinSans(
+                              textStyle: TextStyle(
+                                fontSize: 72,
+                                fontWeight: !Responsive.isMobile(context)
+                                    ? FontWeight.bold
+                                    : FontWeight.bold,
+                                fontStyle: FontStyle.normal,
+                                color: Palette.tabezoBlue,
+                                letterSpacing:
+                                    !Responsive.isMobile(context) ? 15 : 15,
+                              ),
                             ),
                           ),
-                        ),
-                        minFontSize: 0,
-                        stepGranularity: 0.1,
-                        textAlign: TextAlign.left,
-                        strutStyle: StrutStyle(
-                          height: 1.1,
+                          textAlign: TextAlign.left,
+                          strutStyle: StrutStyle(
+                            height: 1.1,
+                          ),
                         ),
                       ),
                     ),

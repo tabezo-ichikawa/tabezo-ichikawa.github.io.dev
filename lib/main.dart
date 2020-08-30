@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tabezo_web/config/palette.dart';
 import 'package:tabezo_web/screens/screens.dart';
-import 'config/palette.dart';
 
 void main() {
   runApp(MyApp());
