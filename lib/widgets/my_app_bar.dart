@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -6,6 +8,8 @@ import 'package:tabezo_web/config/palette.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double sideAreaWidth;
+  final String japTitle;
+  final String engTitle;
   final GlobalKey<ScaffoldState> scaffoldKey;
   @override
   final Size preferredSize;
@@ -13,6 +17,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MyAppBar({
     Key key,
     @required this.sideAreaWidth,
+    @required this.japTitle,
+    @required this.engTitle,
     @required this.scaffoldKey,
     @required this.preferredSize,
   }) : super(key: key);
@@ -39,7 +45,10 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
             // Expandedする
             Expanded(
               child: Container(
-                child: _TitleParagraph(),
+                child: _TitleParagraph(
+                  japTitle: japTitle,
+                  engTitle: engTitle,
+                ),
               ),
             ),
             // 位置調整
@@ -55,6 +64,15 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 class _TitleParagraph extends StatelessWidget {
+  final String japTitle;
+  final String engTitle;
+
+  const _TitleParagraph({
+    Key key,
+    @required this.japTitle,
+    @required this.engTitle,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -64,7 +82,7 @@ class _TitleParagraph extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           AutoSizeText(
-            '市川たべ蔵',
+            japTitle,
             maxLines: 1,
             textAlign: TextAlign.left,
             style: GoogleFonts.sawarabiMincho(
@@ -77,7 +95,7 @@ class _TitleParagraph extends StatelessWidget {
             ),
           ),
           AutoSizeText(
-            'tabezo ichikawa',
+            engTitle,
             maxLines: 2,
             textAlign: TextAlign.left,
             style: GoogleFonts.fasterOne(

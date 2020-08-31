@@ -51,6 +51,8 @@ class _HomeScreenState extends State<HomeScreen> {
         drawer: MyDrawer(),
         appBar: MyAppBar(
           preferredSize: Size(screenSize.width, 140),
+          japTitle: '市川たべ蔵',
+          engTitle: 'tabezo ichikawa',
           scaffoldKey: _scaffoldKey,
           sideAreaWidth: sideAreaWidth,
         ),
@@ -72,7 +74,7 @@ class _HomeScreenDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     final sideAreaWidth = screenSize.width / 6;
-
+    
     return Stack(
       children: <Widget>[
         // Splashエフェクトを見せるためにはInk.imageで画像を描画する必要がある
@@ -84,15 +86,18 @@ class _HomeScreenDesktop extends StatelessWidget {
         ),
 
         // logo links
-        SingleChildScrollView(
-          controller: scrollController,
-          physics: const BouncingScrollPhysics(
-            parent: AlwaysScrollableScrollPhysics(),
+        Padding(
+          padding: EdgeInsets.fromLTRB(
+            sideAreaWidth,
+            140,
+            sideAreaWidth / 2,
+            0,
           ),
-          child: Padding(
-            padding: Responsive.isDesktop(context)
-                ? EdgeInsets.fromLTRB(sideAreaWidth, 140, sideAreaWidth / 2, 0)
-                : EdgeInsets.fromLTRB(sideAreaWidth, 140, sideAreaWidth / 2, 0),
+          child: SingleChildScrollView(
+            controller: scrollController,
+            physics: const BouncingScrollPhysics(
+              parent: AlwaysScrollableScrollPhysics(),
+            ),
             child: Container(
               constraints: BoxConstraints(
                 maxHeight: screenSize.height / 2 - 140,
@@ -193,14 +198,14 @@ class _HomeScreenDesktop extends StatelessWidget {
                               : 'We make music, design and code, de Yarasete Itadaite Orimasu.',
                           style: GoogleFonts.josefinSans(
                             textStyle: TextStyle(
-                              fontSize: 69,
+                              fontSize: 67,
                               fontWeight: !Responsive.isMobile(context)
                                   ? FontWeight.bold
-                                  : FontWeight.bold,
+                                  : FontWeight.w300,
                               fontStyle: FontStyle.italic,
                               color: Palette.tabezoBlue,
                               letterSpacing:
-                                  !Responsive.isMobile(context) ? 15 : 1,
+                                  !Responsive.isMobile(context) ? 15 : 5,
                             ),
                           ),
                         ),

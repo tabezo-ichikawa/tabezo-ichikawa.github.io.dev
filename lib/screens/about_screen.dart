@@ -31,6 +31,8 @@ class _AboutScreenState extends State<AboutScreen> {
         drawer: MyDrawer(),
         appBar: MyAppBar(
           preferredSize: Size(screenSize.width, 140),
+          japTitle: 'なに？',
+          engTitle: 'about',
           scaffoldKey: _scaffoldKey,
           sideAreaWidth: sideAreaWidth,
         ),
