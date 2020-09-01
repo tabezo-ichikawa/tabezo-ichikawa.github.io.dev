@@ -74,7 +74,7 @@ class _HomeScreenDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     final sideAreaWidth = screenSize.width / 6;
-    
+
     return Stack(
       children: <Widget>[
         // Splashエフェクトを見せるためにはInk.imageで画像を描画する必要がある
@@ -198,14 +198,14 @@ class _HomeScreenDesktop extends StatelessWidget {
                               : 'We make music, design and code, de Yarasete Itadaite Orimasu.',
                           style: GoogleFonts.josefinSans(
                             textStyle: TextStyle(
-                              fontSize: 67,
+                              fontSize: Responsive.isDesktop(context) ? 67 : 35,
                               fontWeight: !Responsive.isMobile(context)
                                   ? FontWeight.bold
                                   : FontWeight.w300,
-                              fontStyle: FontStyle.italic,
+                              fontStyle: FontStyle.normal,
                               color: Palette.tabezoBlue,
                               letterSpacing:
-                                  !Responsive.isMobile(context) ? 15 : 5,
+                                  !Responsive.isMobile(context) ? 15 : 1,
                             ),
                           ),
                         ),
