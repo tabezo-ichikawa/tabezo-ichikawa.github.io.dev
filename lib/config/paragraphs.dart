@@ -10,7 +10,7 @@ class Paragraphs {
     // ignore: prefer_initializing_formals
     curContext = context;
     whoWeAre = TextSpan(
-      text: 'Music and video and ...something creator(s) '
+      text: 'Music and video and ...something creators '
           'and software developpers '
           'currently based in Hamamatsu city, Japan.',
       style: Theme.of(context).textTheme.bodyText1,
