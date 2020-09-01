@@ -1,20 +1,16 @@
-name: deploy_to_firebase_hosting
+name: deploy_to_firebase_hosting_debug
 
-on:
-  pull_request:
-    types: closed
-    branches: 'master'
+on: [workflow_dispatch]
 
 jobs:
   deploy_to_firebase_hosting:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     
     steps:
       - name: Checkout the repository
         uses: actions/checkout@master
       
-      - name: debug
+      - name: check directries
         run: ls
       
       - name: Deploy to Firebase
