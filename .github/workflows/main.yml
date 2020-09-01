@@ -14,8 +14,8 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@master
       
-      - name: cd to build/web
-        run: cd ./build/web/
+      - name: debug
+        run: ls
       
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
