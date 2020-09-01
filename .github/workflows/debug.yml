@@ -1,0 +1,22 @@
+name: deploy_to_firebase_hosting_debug
+
+on: [workflow_dispatch]
+
+jobs:
+  deploy_to_firebase_hosting:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@master
+      
+      - name: cd to build/web
+        run: cd ./build/web/
+      
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
