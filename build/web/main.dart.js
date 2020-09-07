@@ -49059,14 +49059,14 @@ E.Pp.prototype={}
 T.P6.prototype={
 I9:function(a){var s,r,q,p,o,n=null
 this.b=new Q.bN("Music and video and ...something creators and software developpers currently based in Hamamatsu city, Japan.",n,n,K.ai(a,!1).V.y)
-this.c=new Q.bN("It's a tricky thing to have a half-hearted creativity, and in contrast, it makes life void.... If you create something on impulse and then throw it into the ocean of the internet, what will it become...? Because there's no way to keep it going in front of work, love, family, Youtube, and Netflix, to the extent that you can't stand up to it at all. But what if we got together and piled on top of each other? The circle of water that each pitch brings to the table could be something else, overlapping with each other. At least that's what Huygens' principle is saying. That's what we are trying to do.",n,n,K.ai(a,!1).V.y)
+this.c=new Q.bN("It's a tricky thing to have a half-hearted creativity, and in contrast, it makes life void.... If you create something on impulse and then throw it into the ocean of the internet, what will it become...? There's no way to keep it going in front of work, relationship, family, Youtube, and Netflix. We can't stand up to them at all. But what if we get together and piled on top of each other? The circle of water that each pitch brings to the ocean could be something else, overlapping with each other. At least that's what Huygens' principle is saying. That's what we are trying to do.",n,n,K.ai(a,!1).V.y)
 s=K.ai(a,!1).V
 r=K.ai(a,!1).V.y.bA(C.kT)
 q=K.ai(a,!1).V.y.bA(C.kT)
 p=K.ai(a,!1).V.y.bA(C.Aj)
 o=N.a5F(n)
 o.b_=new T.P7()
-this.d=new Q.bN(n,H.b([new Q.bN("As an art lover: ",n,n,r),new Q.bN('Please please please follow us anywhere you can, and if you like it, "like it" and share it with your friends. That would make us really happy. \n',n,n,n),new Q.bN("As a creator: ",n,n,q),new Q.bN("If you think you're in the same situation with us, join our ",n,n,n),new Q.bN("Discord server",n,o,p),C.zi],t.ru),n,s.y)}}
+this.d=new Q.bN(n,H.b([new Q.bN("As an art lover: ",n,n,r),new Q.bN("Enjoy our works when you have time. \n",n,n,n),new Q.bN("As a creator: ",n,n,q),new Q.bN("If you think you're in the same situation with us, join our ",n,n,n),new Q.bN("Discord server",n,o,p),C.zi],t.ru),n,s.y)}}
 T.P7.prototype={
 $0:function(){var s=0,r=P.a8(t.P)
 var $async$$0=P.a4(function(a,b){if(a===1)return P.a5(b,r)
