@@ -20,9 +20,9 @@ class Paragraphs {
       text:
           "It's a tricky thing to have a half-hearted creativity, and in contrast, it makes life void.... "
           "If you create something on impulse and then throw it into the ocean of the internet, what will it become...? "
-          "Because there's no way to keep it going in front of work, love, family, Youtube, and Netflix, to the extent that you can't stand up to it at all. "
-          "But what if we got together and piled on top of each other? "
-          "The circle of water that each pitch brings to the table could be something else, overlapping with each other. At least that's what Huygens' principle is saying. "
+          "There's no way to keep it going in front of work, relationship, family, Youtube, and Netflix. We can't stand up to them at all. "
+          "But what if we get together and piled on top of each other? "
+          "The circle of water that each pitch brings to the ocean could be something else, overlapping with each other. At least that's what Huygens' principle is saying. "
           "That's what we are trying to do.",
       style: Theme.of(context).textTheme.bodyText1,
     );
@@ -40,8 +40,7 @@ class Paragraphs {
         ),
         TextSpan(
           text:
-              "Please please please follow us anywhere you can, and if you like it, \"like it\" and share it with your friends. "
-              "That would make us really happy. \n",
+              "Enjoy our works when you have time. \n",
         ),
         TextSpan(
           text: 'As a creator: ',
